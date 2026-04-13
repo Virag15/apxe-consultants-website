@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apxe Consultants — Business Advisory Built Around Your Growth</title>
+  <meta name="description" content="Apxe Consultants partners with founders, SMEs, and growing companies on lead generation, sales, growth strategy, financial advisory, operations, and governance.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#D04A02',
+            branddk: '#B33D00',
+            brandlt: '#E8DDD4',
+            brandbg: '#FFF5EE',
+            dark: '#2D2D2D',
+            dark2: '#1A1A1A',
+            txt: '#333333',
+            sub: '#6D6D6D',
+            lite: '#F5F5F3',
+            line: '#E0E0E0',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Figtree',sans-serif;color:#333;background:#fff;overflow-x:hidden}
+    h1,h2,h3,h4,h5,h6,.hd{font-family:'Bricolage Grotesque',sans-serif}
+
+    .r{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+    .r.v{opacity:1;transform:translateY(0)}
+    .d1{transition-delay:.06s}.d2{transition-delay:.12s}.d3{transition-delay:.18s}
+    .d4{transition-delay:.24s}.d5{transition-delay:.3s}.d6{transition-delay:.36s}
+    .d7{transition-delay:.42s}.d8{transition-delay:.48s}
+
+    .nav-s{background:rgba(255,255,255,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #E0E0E0}
+
+    .btn-b{background:#D04A02;color:#fff;transition:all .2s ease}
+    .btn-b:hover{background:#B33D00;transform:translateY(-1px)}
+    .btn-o{border:1.5px solid #2D2D2D;color:#2D2D2D;transition:all .2s ease}
+    .btn-o:hover{border-color:#D04A02;color:#D04A02}
+    .btn-w{border:1.5px solid rgba(255,255,255,.3);color:#fff;transition:all .2s ease}
+    .btn-w:hover{border-color:#fff;background:#fff;color:#D04A02}
+
+    .link-h{position:relative}
+    .link-h::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:#D04A02;transition:width .25s ease}
+    .link-h:hover::after{width:100%}
+
+    .card{background:#fff;border:1px solid #E0E0E0;transition:all .25s ease}
+    .card:hover{border-color:#D04A02;box-shadow:0 8px 32px rgba(0,0,0,.06)}
+    .card:hover .ci{background:#D04A02}
+    .card:hover .ci svg{stroke:#fff}
+    .ci{width:52px;height:52px;border-radius:14px;background:#FFF5EE;display:flex;align-items:center;justify-content:center;transition:all .25s ease}
+    .ci svg{width:24px;height:24px;stroke:#D04A02;stroke-width:1.5;fill:none;transition:all .25s ease}
+
+    .mob-overlay{position:fixed;inset:0;z-index:60;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s ease}
+    .mob-overlay.open{opacity:1;pointer-events:all}
+    .mob-overlay a{opacity:0;transform:translateY(16px);transition:opacity .3s ease,transform .3s ease}
+    .mob-overlay.open a{opacity:1;transform:translateY(0)}
+    .mob-overlay.open a:nth-child(1){transition-delay:.05s}
+    .mob-overlay.open a:nth-child(2){transition-delay:.1s}
+    .mob-overlay.open a:nth-child(3){transition-delay:.15s}
+    .mob-overlay.open a:nth-child(4){transition-delay:.2s}
+    .mob-overlay.open a:nth-child(5){transition-delay:.25s}
+    .mob-overlay.open a:nth-child(6){transition-delay:.3s}
+    .mob-overlay.open a:nth-child(7){transition-delay:.35s}
+    .mob-overlay.open a:nth-child(8){transition-delay:.4s}
+
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+    @keyframes pulse-ring{0%{transform:scale(1);opacity:.3}100%{transform:scale(1.5);opacity:0}}
+    .float{animation:float 6s ease-in-out infinite}
+    .float-d{animation:float 6s ease-in-out infinite;animation-delay:2s}
+    .float-d2{animation:float 6s ease-in-out infinite;animation-delay:4s}
+    .pulse-r{animation:pulse-ring 2.5s ease-out infinite}
+
+    .stat-num{font-variant-numeric:tabular-nums}
+
+    ::-webkit-scrollbar{width:4px}
+    ::-webkit-scrollbar-track{background:#fff}
+    ::-webkit-scrollbar-thumb{background:#E0E0E0;border-radius:2px}
+    ::-webkit-scrollbar-thumb:hover{background:#D04A02}
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav" class="fixed top-0 w-full z-50 transition-all duration-300">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 h-[68px] flex items-center justify-between">
+      <a href="index.html" class="hd text-lg font-bold tracking-tight text-dark2 relative z-[70]">Apxe<span class="text-brand">.</span></a>
+      <div class="hidden lg:flex items-center gap-10">
+        <a href="index.html" class="link-h text-[13px] font-medium text-dark">Home</a>
+        <a href="about.html" class="link-h text-[13px] font-medium text-sub">About</a>
+        <a href="services.html" class="link-h text-[13px] font-medium text-sub">Services</a>
+        <a href="how-we-work.html" class="link-h text-[13px] font-medium text-sub">How We Work</a>
+        <a href="industries.html" class="link-h text-[13px] font-medium text-sub">Industries</a>
+        <a href="insights.html" class="link-h text-[13px] font-medium text-sub">Insights</a>
+        <a href="contact.html" class="link-h text-[13px] font-medium text-sub">Contact</a>
+      </div>
+      <a href="contact.html" class="hidden lg:inline-flex btn-b px-6 py-2.5 rounded text-[13px] font-semibold">Book a free call</a>
+      <button id="mBtn" class="lg:hidden p-2 relative z-[70]" aria-label="Menu">
+        <svg id="menuIcon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 7h18M3 12h14M3 17h18" stroke="#2D2D2D" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg id="closeIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" class="hidden"><path d="M6 6l12 12M18 6L6 18" stroke="#2D2D2D" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div id="mobOverlay" class="mob-overlay">
+    <a href="index.html" class="hd text-2xl font-bold text-dark2">Home</a>
+    <a href="about.html" class="hd text-2xl font-medium text-sub mt-5">About</a>
+    <a href="services.html" class="hd text-2xl font-medium text-sub mt-5">Services</a>
+    <a href="how-we-work.html" class="hd text-2xl font-medium text-sub mt-5">How We Work</a>
+    <a href="industries.html" class="hd text-2xl font-medium text-sub mt-5">Industries</a>
+    <a href="insights.html" class="hd text-2xl font-medium text-sub mt-5">Insights</a>
+    <a href="contact.html" class="hd text-2xl font-medium text-sub mt-5">Contact</a>
+    <a href="contact.html" class="btn-b px-8 py-3.5 rounded text-sm font-semibold mt-10">Book a free call</a>
+  </div>
+
+
+  <!-- ═══ HERO ═══ -->
+  <section class="pt-[68px] bg-white overflow-hidden">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-16 lg:py-24">
+      <div class="grid lg:grid-cols-[1fr,500px] gap-12 lg:gap-8 items-center">
+        <div>
+          <div class="r w-12 h-[3px] bg-brand mb-8"></div>
+          <h1 class="r d1 hd text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold leading-[1.08] tracking-tight text-dark2 mb-7">
+            When your business needs to move forward, we help you figure out exactly&nbsp;how.
+          </h1>
+          <p class="r d2 text-[17px] text-sub leading-[1.75] max-w-[540px] mb-10">
+            Apxe Consultants partners with founders, SMEs, and growing companies on building lead pipelines, sharpening sales processes, entering new markets, and making sharper financial and governance decisions.
+          </p>
+          <div class="r d3 flex flex-wrap gap-4">
+            <a href="contact.html" class="btn-b px-8 py-4 rounded text-sm font-semibold">Talk to a consultant</a>
+            <a href="services.html" class="btn-o px-8 py-4 rounded text-sm font-semibold">See what we do</a>
+          </div>
+        </div>
+
+        <!-- HERO ILLUSTRATION -->
+        <div class="r d2 hidden lg:block relative">
+          <svg viewBox="0 0 500 460" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+            <!-- Background circle -->
+            <circle cx="250" cy="230" r="200" fill="#FFF5EE"/>
+            <circle cx="250" cy="230" r="200" stroke="#E8DDD4" stroke-width="1" stroke-dasharray="6 4"/>
+
+            <!-- Grid lines -->
+            <line x1="100" y1="350" x2="420" y2="350" stroke="#E0E0E0" stroke-width="1"/>
+            <line x1="100" y1="300" x2="420" y2="300" stroke="#E0E0E0" stroke-width=".5" stroke-dasharray="4 4"/>
+            <line x1="100" y1="250" x2="420" y2="250" stroke="#E0E0E0" stroke-width=".5" stroke-dasharray="4 4"/>
+            <line x1="100" y1="200" x2="420" y2="200" stroke="#E0E0E0" stroke-width=".5" stroke-dasharray="4 4"/>
+            <line x1="100" y1="150" x2="420" y2="150" stroke="#E0E0E0" stroke-width=".5" stroke-dasharray="4 4"/>
+
+            <!-- Growth bars -->
+            <rect x="130" y="280" width="36" height="70" rx="4" fill="#E8DDD4" class="float-d2"/>
+            <rect x="186" y="240" width="36" height="110" rx="4" fill="#E8DDD4" class="float-d"/>
+            <rect x="242" y="200" width="36" height="150" rx="4" fill="#D04A02" opacity=".15" class="float"/>
+            <rect x="298" y="170" width="36" height="180" rx="4" fill="#D04A02" opacity=".25" class="float-d"/>
+            <rect x="354" y="120" width="36" height="230" rx="4" fill="#D04A02" opacity=".4" class="float-d2"/>
+
+            <!-- Growth line -->
+            <polyline points="148,275 204,232 260,192 316,158 372,112" stroke="#D04A02" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+            <!-- Data points with pulse -->
+            <circle cx="148" cy="275" r="8" fill="#fff" stroke="#D04A02" stroke-width="2"/>
+            <circle cx="204" cy="232" r="8" fill="#fff" stroke="#D04A02" stroke-width="2"/>
+            <circle cx="260" cy="192" r="8" fill="#fff" stroke="#D04A02" stroke-width="2"/>
+            <circle cx="316" cy="158" r="8" fill="#fff" stroke="#D04A02" stroke-width="2"/>
+            <circle cx="372" cy="112" r="12" fill="#D04A02"/>
+            <circle cx="372" cy="112" r="12" fill="#D04A02" opacity=".3" class="pulse-r"/>
+            <circle cx="372" cy="112" r="5" fill="#fff"/>
+
+            <!-- Floating cards -->
+            <g class="float">
+              <rect x="60" y="100" width="140" height="60" rx="12" fill="#fff" filter="url(#shadow1)"/>
+              <circle cx="88" cy="130" r="14" fill="#FFF5EE"/>
+              <path d="M82 130l4 4 8-8" stroke="#D04A02" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <rect x="110" y="120" width="70" height="6" rx="3" fill="#E0E0E0"/>
+              <rect x="110" y="132" width="50" height="6" rx="3" fill="#F2F2F2"/>
+            </g>
+
+            <g class="float-d">
+              <rect x="320" y="50" width="150" height="56" rx="12" fill="#fff" filter="url(#shadow1)"/>
+              <rect x="340" y="66" width="40" height="24" rx="6" fill="#D04A02" opacity=".12"/>
+              <text x="348" y="83" font-family="Bricolage Grotesque,sans-serif" font-weight="700" font-size="13" fill="#D04A02">8x</text>
+              <rect x="392" y="70" width="58" height="5" rx="2.5" fill="#E0E0E0"/>
+              <rect x="392" y="80" width="40" height="5" rx="2.5" fill="#F2F2F2"/>
+            </g>
+
+            <g class="float-d2">
+              <rect x="36" y="220" width="110" height="50" rx="10" fill="#fff" filter="url(#shadow1)"/>
+              <circle cx="60" cy="245" r="12" fill="#D04A02" opacity=".1"/>
+              <path d="M55 245h10M60 240v10" stroke="#D04A02" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <rect x="80" y="237" width="50" height="5" rx="2.5" fill="#E0E0E0"/>
+              <rect x="80" y="247" width="35" height="5" rx="2.5" fill="#F2F2F2"/>
+            </g>
+
+            <!-- Arrow up -->
+            <g class="float" opacity=".7">
+              <circle cx="420" cy="180" r="20" fill="#D04A02" opacity=".08"/>
+              <path d="M420 192V170M414 176l6-6 6 6" stroke="#D04A02" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </g>
+
+            <!-- Connecting dots -->
+            <circle cx="110" cy="380" r="3" fill="#D04A02" opacity=".15"/>
+            <circle cx="400" cy="380" r="4" fill="#D04A02" opacity=".1"/>
+            <circle cx="440" cy="270" r="3" fill="#D04A02" opacity=".12"/>
+
+            <defs>
+              <filter id="shadow1" x="-10" y="-4" width="calc(100% + 20px)" height="calc(100% + 20px)">
+                <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#000" flood-opacity=".06"/>
+              </filter>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ STATS STRIP ═══ -->
+  <section class="bg-dark2">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-14 lg:py-16">
+      <div class="r grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div class="text-center lg:text-left">
+          <p class="hd stat-num text-3xl lg:text-4xl font-extrabold text-brand mb-1">8</p>
+          <p class="text-sm text-white/50">Advisory service areas</p>
+        </div>
+        <div class="text-center lg:text-left">
+          <p class="hd stat-num text-3xl lg:text-4xl font-extrabold text-brand mb-1">8</p>
+          <p class="text-sm text-white/50">Industries served</p>
+        </div>
+        <div class="text-center lg:text-left">
+          <p class="hd stat-num text-3xl lg:text-4xl font-extrabold text-brand mb-1">4</p>
+          <p class="text-sm text-white/50">Step engagement model</p>
+        </div>
+        <div class="text-center lg:text-left">
+          <p class="hd stat-num text-3xl lg:text-4xl font-extrabold text-brand mb-1">1</p>
+          <p class="text-sm text-white/50">Firm for the full picture</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ TRUST STRIP ═══ -->
+  <section class="bg-white">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-24">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="r d1 bg-brandbg rounded-2xl p-8 relative overflow-hidden">
+          <svg class="absolute -right-6 -bottom-6 w-24 h-24 opacity-10" viewBox="0 0 80 80" fill="none"><path d="M40 5L75 70H5z" stroke="#D04A02" stroke-width="2"/></svg>
+          <div class="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center mb-5">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3 class="hd text-[15px] font-bold text-dark mb-2">End-to-end advisory</h3>
+          <p class="text-[13px] text-sub leading-relaxed">Lead generation to succession planning — one firm, one relationship, the whole lifecycle.</p>
+        </div>
+        <div class="r d2 bg-brandbg rounded-2xl p-8 relative overflow-hidden">
+          <svg class="absolute -right-4 -bottom-4 w-20 h-20 opacity-10" viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="35" stroke="#D04A02" stroke-width="2"/><circle cx="40" cy="40" r="20" stroke="#D04A02" stroke-width="1.5"/></svg>
+          <div class="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center mb-5">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          </div>
+          <h3 class="hd text-[15px] font-bold text-dark mb-2">Built around execution</h3>
+          <p class="text-[13px] text-sub leading-relaxed">Strategies are only useful when they work in practice. We make sure they do.</p>
+        </div>
+        <div class="r d3 bg-brandbg rounded-2xl p-8 relative overflow-hidden">
+          <svg class="absolute -right-4 -bottom-4 w-20 h-20 opacity-10" viewBox="0 0 80 80" fill="none"><rect x="10" y="10" width="60" height="60" rx="8" stroke="#D04A02" stroke-width="2"/><rect x="25" y="25" width="30" height="30" rx="4" stroke="#D04A02" stroke-width="1.5"/></svg>
+          <div class="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center mb-5">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3 class="hd text-[15px] font-bold text-dark mb-2">Grounded in Indian business realities</h3>
+          <p class="text-[13px] text-sub leading-relaxed">We understand the market and regulations — while applying globally sound frameworks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ SERVICES ═══ -->
+  <section class="bg-lite">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+      <div class="r mb-14 max-w-[600px]">
+        <div class="w-10 h-[3px] bg-brand mb-6"></div>
+        <h2 class="hd text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight text-dark2 mb-4">What we do</h2>
+        <p class="text-base text-sub leading-relaxed">Eight areas of business advisory. One unified offering. Whether you have one problem or need a long-term partner — we move the business forward.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="r d1 card rounded-xl p-6 cursor-pointer">
+          <div class="ci mb-5"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-brand mb-2">Growth</p>
+          <h3 class="hd text-[15px] font-bold text-dark mb-2">Lead Generation & Demand Creation</h3>
+          <p class="text-[13px] text-sub leading-relaxed">Build a system that brings the right people to your door, every month.</p>
+        </div>
+        <div class="r d2 card rounded-xl p-6 cursor-pointer">
+          <div class="ci mb-5"><svg viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div>
+          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-brand mb-2">Revenue</p>
+          <h3 class="hd text-[15px] font-bold text-dark mb-2">Sales & Business Development</h3>
+          <p class="text-[13px] text-sub leading-relaxed">A pipeline is only valuable when it converts. We build the process that makes it happen.</p>
+        </div>
+        <div class="r d3 card rounded-xl p-6 cursor-pointer">
+          <div class="ci mb-5"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-6.22-8.56"/><path d="M22 2 13.5 10.5"/><path d="M16 2h6v6"/></svg></div>
+          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-brand mb-2">Expansion</p>
+          <h3 class="hd text-[15px] font-bold text-dark mb-2">Growth Strategy & Market Expansion</h3>
+          <p class="text-[13px] text-sub leading-relaxed">New market or revenue line — we design the entry strategy and infrastructure.</p>
+        </div>
+        <div class="r d4 card rounded-xl p-6 cursor-pointer">
+          <div class="ci mb-5"><svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-brand mb-2">Finance</p>
+          <h3 class="hd text-[15px] font-bold text-dark mb-2">Financial Advisory</h3>
+          <p class="text-[13px] text-sub leading-relaxed">Numbers tell a story. We help you read it clearly and make decisions with confidence.</p>
+        </div>
+        <div class="r d5 card rounded-xl p-6 cursor-pointer">
+          <div class="ci mb-5"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-brand mb-2">Operations</p>
+          <h3 class="hd text-[15px] font-bold text-dark mb-2">Operational Efficiency</h3>
+          <p class="text-[13px] text-sub leading-relaxed">We find where operations leak time and money, and fix it.</p>
+        </div>
+        <div class="r d6 card rounded-xl p-6 cursor-pointer">
+          <div class="ci mb-5"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-brand mb-2">Marketing</p>
+          <h3 class="hd text-[15px] font-bold text-dark mb-2">Marketing & Sales Advisory</h3>
+          <p class="text-[13px] text-sub leading-relaxed">Make sure your marketing earns its place in the revenue conversation.</p>
+        </div>
+        <div class="r d7 card rounded-xl p-6 cursor-pointer">
+          <div class="ci mb-5"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-brand mb-2">Governance</p>
+          <h3 class="hd text-[15px] font-bold text-dark mb-2">Compliance & Risk Management</h3>
+          <p class="text-[13px] text-sub leading-relaxed">Growth without governance is risky. We make sure your business is protected.</p>
+        </div>
+        <div class="r d8 card rounded-xl p-6 cursor-pointer">
+          <div class="ci mb-5"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-brand mb-2">Legacy</p>
+          <h3 class="hd text-[15px] font-bold text-dark mb-2">Succession & Exit Planning</h3>
+          <p class="text-[13px] text-sub leading-relaxed">We help you prepare before the pressure is on.</p>
+        </div>
+      </div>
+      <div class="r mt-12">
+        <a href="services.html" class="inline-flex items-center gap-2 text-sm font-semibold text-brand hover:text-branddk transition-colors">Explore all services <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ WHY APXE ═══ -->
+  <section class="bg-dark2 relative overflow-hidden">
+    <!-- Side illustration -->
+    <svg class="absolute right-0 top-0 h-full w-[400px] opacity-[0.04] hidden lg:block" viewBox="0 0 400 700" fill="none">
+      <circle cx="350" cy="180" r="120" stroke="#D04A02" stroke-width="1.5"/>
+      <circle cx="300" cy="400" r="180" stroke="#D04A02" stroke-width="1"/>
+      <circle cx="380" cy="600" r="80" stroke="#D04A02" stroke-width="1"/>
+      <line x1="350" y1="60" x2="350" y2="640" stroke="#D04A02" stroke-width=".5" stroke-dasharray="4 6"/>
+    </svg>
+
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-24 lg:py-32 relative z-10">
+      <div class="r mb-16 max-w-[560px]">
+        <div class="w-10 h-[3px] bg-brand mb-6"></div>
+        <h2 class="hd text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight text-white">Why Apxe Consultants</h2>
+      </div>
+      <div class="grid lg:grid-cols-2 gap-5">
+        <div class="r d1 bg-white/[0.04] rounded-2xl p-8 border border-white/[0.06] hover:border-brand/40 transition-all group">
+          <div class="flex items-start gap-5">
+            <div class="w-14 h-14 rounded-2xl bg-brand/10 flex items-center justify-center shrink-0 group-hover:bg-brand/20 transition-colors">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            </div>
+            <div>
+              <h3 class="hd text-lg font-bold text-white mb-2">We stay for the execution</h3>
+              <p class="text-[14px] text-white/45 leading-relaxed">Most firms write the plan and hand it over. We treat delivery as part of the job — coaching your team, testing what works, and staying until the output is real.</p>
+            </div>
+          </div>
+        </div>
+        <div class="r d2 bg-white/[0.04] rounded-2xl p-8 border border-white/[0.06] hover:border-brand/40 transition-all group">
+          <div class="flex items-start gap-5">
+            <div class="w-14 h-14 rounded-2xl bg-brand/10 flex items-center justify-center shrink-0 group-hover:bg-brand/20 transition-colors">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </div>
+            <div>
+              <h3 class="hd text-lg font-bold text-white mb-2">We start with the right questions</h3>
+              <p class="text-[14px] text-white/45 leading-relaxed">Before we recommend anything, we take time to actually understand your business. The correct diagnosis changes everything.</p>
+            </div>
+          </div>
+        </div>
+        <div class="r d3 bg-white/[0.04] rounded-2xl p-8 border border-white/[0.06] hover:border-brand/40 transition-all group">
+          <div class="flex items-start gap-5">
+            <div class="w-14 h-14 rounded-2xl bg-brand/10 flex items-center justify-center shrink-0 group-hover:bg-brand/20 transition-colors">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <h3 class="hd text-lg font-bold text-white mb-2">One firm for the full picture</h3>
+              <p class="text-[14px] text-white/45 leading-relaxed">Lead generation, financial planning, succession, compliance — these aren't separate problems. We see them together, and advise accordingly.</p>
+            </div>
+          </div>
+        </div>
+        <div class="r d4 bg-white/[0.04] rounded-2xl p-8 border border-white/[0.06] hover:border-brand/40 transition-all group">
+          <div class="flex items-start gap-5">
+            <div class="w-14 h-14 rounded-2xl bg-brand/10 flex items-center justify-center shrink-0 group-hover:bg-brand/20 transition-colors">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <h3 class="hd text-lg font-bold text-white mb-2">Sized for where you actually are</h3>
+              <p class="text-[14px] text-white/45 leading-relaxed">Whether you're 5 people or 500, a founder or a board — we calibrate the depth to your stage, not a standard package.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ HOW WE WORK ═══ -->
+  <section class="bg-white">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+      <div class="grid lg:grid-cols-[1fr,1.1fr] gap-16 lg:gap-28">
+        <div class="lg:sticky lg:top-28 lg:self-start">
+          <div class="r">
+            <div class="w-10 h-[3px] bg-brand mb-6"></div>
+            <h2 class="hd text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight text-dark2 mb-5">How we work</h2>
+            <p class="text-base text-sub leading-relaxed mb-8">Four steps. Every engagement. No shortcuts.</p>
+            <a href="how-we-work.html" class="btn-b px-6 py-3 rounded text-sm font-semibold inline-flex items-center gap-2">See the full model <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <!-- Process illustration -->
+          <div class="r d2 mt-12 hidden lg:block">
+            <svg viewBox="0 0 340 220" fill="none" class="w-full">
+              <rect x="0" y="0" width="340" height="220" rx="16" fill="#FFF5EE"/>
+              <!-- Connecting line -->
+              <path d="M68 80 C100 80, 100 130, 135 130 C170 130, 170 70, 205 70 C240 70, 240 120, 272 120" stroke="#D04A02" stroke-width="1.5" stroke-dasharray="0" stroke-linecap="round" opacity=".2"/>
+              <!-- Step 1 -->
+              <circle cx="68" cy="80" r="22" fill="#fff" stroke="#E0E0E0" stroke-width="1"/>
+              <circle cx="68" cy="80" r="14" fill="#D04A02" opacity=".08"/>
+              <text x="68" y="84" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="700" font-size="12" fill="#D04A02">1</text>
+              <text x="68" y="118" text-anchor="middle" font-family="Figtree,sans-serif" font-weight="500" font-size="9" fill="#6D6D6D">Discover</text>
+              <!-- Step 2 -->
+              <circle cx="135" cy="130" r="22" fill="#fff" stroke="#E0E0E0" stroke-width="1"/>
+              <circle cx="135" cy="130" r="14" fill="#D04A02" opacity=".1"/>
+              <text x="135" y="134" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="700" font-size="12" fill="#D04A02">2</text>
+              <text x="135" y="168" text-anchor="middle" font-family="Figtree,sans-serif" font-weight="500" font-size="9" fill="#6D6D6D">Diagnose</text>
+              <!-- Step 3 -->
+              <circle cx="205" cy="70" r="22" fill="#fff" stroke="#E0E0E0" stroke-width="1"/>
+              <circle cx="205" cy="70" r="14" fill="#D04A02" opacity=".12"/>
+              <text x="205" y="74" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="700" font-size="12" fill="#D04A02">3</text>
+              <text x="205" y="108" text-anchor="middle" font-family="Figtree,sans-serif" font-weight="500" font-size="9" fill="#6D6D6D">Design</text>
+              <!-- Step 4 — highlighted -->
+              <circle cx="272" cy="120" r="26" fill="#D04A02" opacity=".08"/>
+              <circle cx="272" cy="120" r="22" fill="#fff" stroke="#D04A02" stroke-width="1.5"/>
+              <circle cx="272" cy="120" r="14" fill="#D04A02" opacity=".15"/>
+              <text x="272" y="124" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="700" font-size="12" fill="#D04A02">4</text>
+              <text x="272" y="162" text-anchor="middle" font-family="Figtree,sans-serif" font-weight="600" font-size="9" fill="#D04A02">Deploy</text>
+              <!-- Small arrow hints -->
+              <path d="M90 82l8 8" stroke="#D04A02" stroke-width="1" opacity=".25" stroke-linecap="round"/>
+              <path d="M157 126l8-10" stroke="#D04A02" stroke-width="1" opacity=".25" stroke-linecap="round"/>
+              <path d="M227 75l8 8" stroke="#D04A02" stroke-width="1" opacity=".25" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="flex flex-col gap-0 border-l-2 border-line ml-4 lg:ml-0">
+          <div class="r d1 relative pl-10 pb-12">
+            <div class="absolute left-[-17px] top-0 w-8 h-8 rounded-full bg-brand flex items-center justify-center"><span class="text-white text-xs font-bold">1</span></div>
+            <h3 class="hd text-lg font-bold text-dark mb-2">Discover</h3>
+            <p class="text-[14px] text-sub leading-relaxed">Structured conversations with the people who actually know the business — mapping what's really going on, not what the surface suggests.</p>
+          </div>
+          <div class="r d2 relative pl-10 pb-12">
+            <div class="absolute left-[-17px] top-0 w-8 h-8 rounded-full bg-brand flex items-center justify-center"><span class="text-white text-xs font-bold">2</span></div>
+            <h3 class="hd text-lg font-bold text-dark mb-2">Diagnose</h3>
+            <p class="text-[14px] text-sub leading-relaxed">We identify the real obstacles. A sales problem is sometimes a lead quality problem. A cash flow issue is sometimes a pricing issue. We find what's actually going on.</p>
+          </div>
+          <div class="r d3 relative pl-10 pb-12">
+            <div class="absolute left-[-17px] top-0 w-8 h-8 rounded-full bg-brand flex items-center justify-center"><span class="text-white text-xs font-bold">3</span></div>
+            <h3 class="hd text-lg font-bold text-dark mb-2">Design</h3>
+            <p class="text-[14px] text-sub leading-relaxed">We build the plan with you. Your context, your team, your constraints shape the solution — something concrete your team can act on immediately.</p>
+          </div>
+          <div class="r d4 relative pl-10">
+            <div class="absolute left-[-17px] top-0 w-8 h-8 rounded-full bg-brand flex items-center justify-center"><span class="text-white text-xs font-bold">4</span></div>
+            <h3 class="hd text-lg font-bold text-dark mb-2">Deploy & Support</h3>
+            <p class="text-[14px] text-sub leading-relaxed">We stay through implementation. Regular check-ins, hands-on support, and honest reassessment when something isn't working.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ INDUSTRIES ═══ -->
+  <section class="bg-lite border-t border-line">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-24 lg:py-28">
+      <div class="r mb-14 max-w-[600px]">
+        <div class="w-10 h-[3px] bg-brand mb-6"></div>
+        <h2 class="hd text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight text-dark2 mb-4">Industries we serve</h2>
+        <p class="text-base text-sub leading-relaxed">We work across sectors. Context always shapes how we apply our advisory.</p>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="r d1 bg-white rounded-xl p-6 border border-line hover:border-brand hover:shadow-sm transition-all cursor-pointer group">
+          <svg class="mb-4" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6D6D6D" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+          <p class="hd text-sm font-bold text-dark group-hover:text-brand transition-colors">Financial & Professional Services</p>
+        </div>
+        <div class="r d2 bg-white rounded-xl p-6 border border-line hover:border-brand hover:shadow-sm transition-all cursor-pointer group">
+          <svg class="mb-4" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6D6D6D" stroke-width="1.5"><path d="M2 20h20M5 20V8l7-5 7 5v12"/><path d="M9 20v-4h6v4"/></svg>
+          <p class="hd text-sm font-bold text-dark group-hover:text-brand transition-colors">Manufacturing & Industrial</p>
+        </div>
+        <div class="r d3 bg-white rounded-xl p-6 border border-line hover:border-brand hover:shadow-sm transition-all cursor-pointer group">
+          <svg class="mb-4" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6D6D6D" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <p class="hd text-sm font-bold text-dark group-hover:text-brand transition-colors">Real Estate & Infrastructure</p>
+        </div>
+        <div class="r d4 bg-white rounded-xl p-6 border border-line hover:border-brand hover:shadow-sm transition-all cursor-pointer group">
+          <svg class="mb-4" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6D6D6D" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <p class="hd text-sm font-bold text-dark group-hover:text-brand transition-colors">Technology & SaaS</p>
+        </div>
+        <div class="r d5 bg-white rounded-xl p-6 border border-line hover:border-brand hover:shadow-sm transition-all cursor-pointer group">
+          <svg class="mb-4" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6D6D6D" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <p class="hd text-sm font-bold text-dark group-hover:text-brand transition-colors">Healthcare & Life Sciences</p>
+        </div>
+        <div class="r d6 bg-white rounded-xl p-6 border border-line hover:border-brand hover:shadow-sm transition-all cursor-pointer group">
+          <svg class="mb-4" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6D6D6D" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <p class="hd text-sm font-bold text-dark group-hover:text-brand transition-colors">Retail & Consumer Goods</p>
+        </div>
+        <div class="r d7 bg-white rounded-xl p-6 border border-line hover:border-brand hover:shadow-sm transition-all cursor-pointer group">
+          <svg class="mb-4" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6D6D6D" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <p class="hd text-sm font-bold text-dark group-hover:text-brand transition-colors">Education & Edtech</p>
+        </div>
+        <div class="r d8 bg-white rounded-xl p-6 border border-line hover:border-brand hover:shadow-sm transition-all cursor-pointer group">
+          <svg class="mb-4" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6D6D6D" stroke-width="1.5"><rect x="1" y="6" width="22" height="12" rx="2"/><path d="M1 10h22"/></svg>
+          <p class="hd text-sm font-bold text-dark group-hover:text-brand transition-colors">Logistics & Supply Chain</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ CTA ═══ -->
+  <section class="bg-brand relative overflow-hidden">
+    <svg class="absolute left-0 top-0 h-full w-full opacity-10" viewBox="0 0 1280 200" fill="none" preserveAspectRatio="none">
+      <circle cx="200" cy="100" r="180" stroke="#fff" stroke-width="1"/>
+      <circle cx="1100" cy="50" r="120" stroke="#fff" stroke-width="1"/>
+      <circle cx="600" cy="180" r="80" stroke="#fff" stroke-width=".75"/>
+    </svg>
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-24 relative z-10">
+      <div class="r flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+        <div class="max-w-[540px]">
+          <h2 class="hd text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold tracking-tight text-white mb-4">Let's talk about your business.</h2>
+          <p class="text-[15px] text-white/75 leading-relaxed">No agenda, no obligation. Just a straightforward conversation about where things stand and where you want to take them.</p>
+        </div>
+        <div class="flex flex-wrap gap-4">
+          <a href="contact.html" class="bg-white text-brand px-8 py-4 rounded text-sm font-semibold hover:bg-white/90 transition-all">Book a free call</a>
+          <a href="services.html" class="btn-w px-8 py-4 rounded text-sm font-semibold">Explore services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="bg-dark2 py-16 px-6 lg:px-10">
+    <div class="max-w-[1280px] mx-auto">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+        <div>
+          <a href="/" class="hd text-lg font-bold text-white block mb-5">Apxe<span class="text-brand">.</span></a>
+          <p class="text-sm text-white/35 leading-relaxed mb-6">Business advisory built around your growth.</p>
+          <div class="flex gap-5">
+            <a href="#" class="text-white/35 hover:text-brand transition-colors"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg></a>
+            <a href="#" class="text-white/35 hover:text-brand transition-colors"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg></a>
+            <a href="#" class="text-white/35 hover:text-brand transition-colors"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-white/25 mb-5">Services</p>
+          <div class="flex flex-col gap-3">
+            <a href="services.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Lead Generation</a>
+            <a href="services.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Sales & BD</a>
+            <a href="services.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Growth Strategy</a>
+            <a href="services.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Financial Advisory</a>
+            <a href="services.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Operations</a>
+            <a href="services.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Marketing Advisory</a>
+            <a href="services.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Compliance & Risk</a>
+            <a href="services.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Succession Planning</a>
+          </div>
+        </div>
+        <div>
+          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-white/25 mb-5">Company</p>
+          <div class="flex flex-col gap-3">
+            <a href="about.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">About</a>
+            <a href="how-we-work.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">How We Work</a>
+            <a href="industries.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Industries</a>
+            <a href="insights.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Insights</a>
+            <a href="contact.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Contact</a>
+          </div>
+        </div>
+        <div>
+          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-white/25 mb-5">Legal</p>
+          <div class="flex flex-col gap-3 mb-6">
+            <a href="#" class="text-[13px] text-white/45 hover:text-brand transition-colors">Privacy Policy</a>
+            <a href="#" class="text-[13px] text-white/45 hover:text-brand transition-colors">Terms of Use</a>
+          </div>
+          <p class="text-[11px] text-white/25 leading-relaxed">Content on this website is for general informational purposes only and does not constitute legal, financial, or regulatory advice.</p>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <p class="text-[12px] text-white/25">&copy; 2025 Apxe Consultants. All rights reserved.</p>
+        <p class="text-[12px] text-white/25">Advisory & Consultancy · India</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');io.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.r').forEach(el=>io.observe(el));
+    const navEl=document.getElementById('nav');let t=false;
+    window.addEventListener('scroll',()=>{if(!t){requestAnimationFrame(()=>{navEl.classList.toggle('nav-s',scrollY>24);t=false});t=true}},{passive:true});
+    const mob=document.getElementById('mobOverlay'),mi=document.getElementById('menuIcon'),ci=document.getElementById('closeIcon');
+    let isOpen=false;
+    function oM(){mob.classList.add('open');mi.classList.add('hidden');ci.classList.remove('hidden');document.body.style.overflow='hidden';isOpen=true}
+    function cM(){mob.classList.remove('open');mi.classList.remove('hidden');ci.classList.add('hidden');document.body.style.overflow='';isOpen=false}
+    document.getElementById('mBtn').addEventListener('click',()=>{isOpen?cM():oM()});
+  </script>
+
+</body>
+</html>
