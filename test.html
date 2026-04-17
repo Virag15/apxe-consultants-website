@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Apxe Consultants — Business advisory built for execution. Lead generation, sales, growth strategy, finance, operations, marketing, governance, succession." />
+<title>Apxe Consultants / Business Advisory</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://api.fontshare.com" />
+
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600,700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  /* ============================================================
+     0 — Tokens
+  ============================================================= */
+  :root {
+    --bg:         #F3F1EC;
+    --bg-alt:     #E8E5DD;
+    --bg-dark:    #0E0E0C;
+    --surface:    #FFFFFF;
+
+    --ink:        #111110;
+    --ink-soft:   #3A3834;
+    --ink-muted:  #7A766D;
+    --on-dark:    #ECE8DE;
+    --on-dark-soft: #A8A49A;
+
+    --line:       #D4CFC1;
+    --line-soft:  #E3DDCD;
+    --line-dark:  rgba(236, 232, 222, 0.14);
+
+    --accent:     #B8372E;
+    --accent-2:   #9A2A22;
+
+    --sans:       'General Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --mono:       'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+    --container:  1440px;
+    --gutter:     clamp(20px, 3.5vw, 56px);
+
+    --ease:       cubic-bezier(.2,.7,.2,1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  img, svg { display: block; max-width: 100%; }
+  a   { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+  ::selection { background: var(--accent); color: #FFF; }
+
+  .container {
+    width: 100%;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding-inline: var(--gutter);
+    position: relative;
+  }
+
+  .mono {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .mono-sm { font-size: 10px; letter-spacing: 0.08em; }
+
+  h1, h2, h3, h4 { font-weight: 500; letter-spacing: -0.02em; line-height: 1.0; }
+
+  /* ============================================================
+     1 — Meta strip
+  ============================================================= */
+  .meta-strip {
+    background: var(--ink);
+    color: var(--on-dark-soft);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 10px 0;
+    font-weight: 500;
+  }
+  .meta-strip .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .meta-strip .left { display: flex; gap: 20px; align-items: center; }
+  .meta-strip .right { display: flex; gap: 20px; align-items: center; }
+  .meta-strip .dot {
+    display: inline-block;
+    width: 7px; height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .meta-strip .right a { transition: color .15s var(--ease); }
+  .meta-strip .right a:hover { color: #FFF; }
+  @media (max-width: 720px) { .meta-strip .right { display: none; } }
+
+  /* ============================================================
+     2 — Nav
+  ============================================================= */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    background: var(--bg);
+    border-bottom: 1px solid transparent;
+    transition: border-color .15s var(--ease), background .15s var(--ease);
+  }
+  .nav.is-scrolled {
+    border-bottom-color: var(--line);
+    background: rgba(243, 241, 236, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    gap: 24px;
+  }
+
+  /* Logo — SVG monogram */
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--ink);
+  }
+  .logo svg { width: 28px; height: 28px; display: block; }
+  .logo-text {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .logo-text .slash { color: var(--accent); margin: 0 4px; font-weight: 400; }
+  .logo-text .sub { color: var(--ink-muted); font-weight: 400; }
+
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a {
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-weight: 500;
+    padding: 6px 2px;
+    transition: color .15s var(--ease);
+    display: inline-flex;
+    align-items: baseline;
+    gap: 5px;
+  }
+  .nav-links a .n {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--ink-muted);
+    font-weight: 500;
+    transition: color .15s var(--ease);
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a:hover .n { color: var(--accent); }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 18px;
+    background: var(--ink);
+    color: var(--bg);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: background .15s var(--ease);
+    border-radius: 1px;
+  }
+  .nav-cta:hover { background: var(--accent); }
+  .nav-cta .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; display: inline-block; }
+  .nav-cta:hover .dot { background: var(--bg); }
+
+  .nav-mobile { display: none; }
+  @media (max-width: 1040px) {
+    .nav-links, .nav-cta { display: none; }
+    .nav-mobile { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; }
+  }
+
+  /* ============================================================
+     3 — Hero
+  ============================================================= */
+  .hero { padding: clamp(36px, 5vw, 72px) 0 clamp(48px, 7vw, 96px); position: relative; }
+  .hero-frame { position: relative; padding: clamp(20px, 2.5vw, 32px) 0; }
+  .crop-mark { position: absolute; width: 14px; height: 14px; pointer-events: none; }
+  .crop-tl { top: 0; left: 0; border-top: 1.5px solid var(--ink); border-left: 1.5px solid var(--ink); }
+  .crop-tr { top: 0; right: 0; border-top: 1.5px solid var(--ink); border-right: 1.5px solid var(--ink); }
+  .crop-bl { bottom: 0; left: 0; border-bottom: 1.5px solid var(--ink); border-left: 1.5px solid var(--ink); }
+  .crop-br { bottom: 0; right: 0; border-bottom: 1.5px solid var(--ink); border-right: 1.5px solid var(--ink); }
+
+  .hero-meta-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 24px;
+    align-items: center;
+    padding-bottom: clamp(28px, 4vw, 48px);
+  }
+  .hero-meta-row .left { color: var(--ink-muted); }
+  .hero-meta-row .right { color: var(--ink-muted); text-align: right; }
+  .hero-meta-row .center {
+    color: var(--ink);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-meta-row .status {
+    display: inline-block;
+    width: 7px; height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  @media (max-width: 720px) {
+    .hero-meta-row { grid-template-columns: 1fr; text-align: left; }
+    .hero-meta-row .right { text-align: left; }
+  }
+
+  .hero-main {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: clamp(32px, 5vw, 72px);
+    align-items: start;
+  }
+  .hero-title {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(40px, 6.2vw, 108px);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    padding-block: clamp(24px, 3vw, 40px);
+    max-width: 18ch;
+  }
+  .hero-title .light { font-weight: 300; color: var(--ink-soft); }
+  .hero-title .mark  { color: var(--accent); }
+
+  .hero-graphic {
+    padding-top: clamp(24px, 3vw, 40px);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  .hero-graphic svg { width: 100%; max-width: 460px; height: auto; }
+
+  @media (max-width: 960px) {
+    .hero-main { grid-template-columns: 1fr; }
+    .hero-graphic { justify-content: flex-start; display: none; }
+  }
+
+  .hero-bottom {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: clamp(32px, 5vw, 80px);
+    align-items: end;
+    padding-top: clamp(28px, 4vw, 48px);
+    border-top: 1px solid var(--line);
+  }
+  .hero-sub {
+    font-size: clamp(15px, 1.2vw, 17px);
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    padding-top: 24px;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-top: 24px;
+    justify-content: flex-end;
+  }
+  @media (max-width: 768px) {
+    .hero-bottom { grid-template-columns: 1fr; }
+    .hero-ctas { justify-content: flex-start; }
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 22px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.005em;
+    transition: all .15s var(--ease);
+    border-radius: 1px;
+    white-space: nowrap;
+  }
+  .btn:hover .arrow { transform: translateX(3px); }
+  .btn .arrow { transition: transform .2s var(--ease); display: inline-block; }
+  .btn-primary { background: var(--ink); color: var(--bg); }
+  .btn-primary:hover { background: var(--accent); }
+  .btn-ghost {
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    background: transparent;
+  }
+  .btn-ghost:hover { background: var(--ink); color: var(--bg); }
+
+  /* ============================================================
+     4 — Stats strip
+  ============================================================= */
+  .stats { background: var(--bg-dark); color: var(--on-dark); border-top: 1px solid var(--ink); }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-right: 1px solid var(--line-dark);
+  }
+  .stat {
+    padding: clamp(24px, 2.6vw, 36px) clamp(20px, 2.5vw, 32px);
+    border-left: 1px solid var(--line-dark);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 130px;
+    justify-content: space-between;
+    position: relative;
+  }
+  .stat-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+  .stat-label { color: var(--on-dark-soft); }
+  .stat-icon { opacity: 0.6; }
+  .stat-icon svg { width: 22px; height: 22px; stroke: var(--on-dark); stroke-width: 1.25; fill: none; }
+  .stat-value {
+    font-weight: 500;
+    font-size: clamp(26px, 2.8vw, 40px);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    color: var(--on-dark);
+  }
+  .stat-value .unit {
+    font-size: 0.48em;
+    color: var(--on-dark-soft);
+    margin-left: 6px;
+    font-weight: 400;
+  }
+  .stat-value .dot { color: var(--accent); }
+  @media (max-width: 960px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .stats-grid { grid-template-columns: 1fr; } }
+
+  /* ============================================================
+     5 — Trust
+  ============================================================= */
+  .trust {
+    padding: clamp(72px, 10vw, 144px) 0;
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.1fr;
+    gap: clamp(40px, 6vw, 96px);
+    align-items: start;
+  }
+  .trust-label .mono {
+    color: var(--ink-muted);
+    margin-bottom: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .trust-label .mono::before { content: ""; width: 24px; height: 1px; background: var(--accent); }
+
+  .trust-quote {
+    font-weight: 400;
+    font-size: clamp(24px, 3vw, 40px);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    max-width: 22ch;
+  }
+  .trust-attr {
+    margin-top: 36px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--ink-muted);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .trust-attr span:last-child { color: var(--ink); }
+
+  .trust-points { display: flex; flex-direction: column; }
+  .trust-point {
+    padding: 28px 0;
+    display: grid;
+    grid-template-columns: 56px 80px 1fr;
+    gap: 20px;
+    border-top: 1px solid var(--line);
+    align-items: start;
+  }
+  .trust-point:first-child { border-top: 0; padding-top: 0; }
+  .trust-point .icon svg { width: 40px; height: 40px; stroke: var(--ink); stroke-width: 1.25; fill: none; }
+  .trust-point .num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    font-weight: 500;
+    padding-top: 12px;
+  }
+  .trust-point h4 {
+    font-size: clamp(18px, 1.55vw, 22px);
+    font-weight: 500;
+    margin-bottom: 8px;
+    letter-spacing: -0.015em;
+  }
+  .trust-point p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    max-width: 52ch;
+  }
+  @media (max-width: 860px) { .trust-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 540px) {
+    .trust-point { grid-template-columns: 40px 1fr; }
+    .trust-point .num { grid-column: 1 / -1; padding: 0; }
+  }
+
+  /* ============================================================
+     6 — Section shell
+  ============================================================= */
+  .section { padding: clamp(72px, 10vw, 144px) 0; position: relative; }
+  .section-head {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: clamp(32px, 5vw, 80px);
+    align-items: end;
+    padding-bottom: clamp(44px, 6vw, 80px);
+  }
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+  .section-tag::before {
+    content: "§";
+    color: var(--accent);
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+  .section-title {
+    font-weight: 500;
+    font-size: clamp(32px, 4.4vw, 60px);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    max-width: 16ch;
+  }
+  .section-title .mark { color: var(--accent); }
+  .section-title .light { font-weight: 300; color: var(--ink-soft); }
+  .section-intro {
+    font-size: clamp(15px, 1.1vw, 16px);
+    color: var(--ink-soft);
+    line-height: 1.6;
+    max-width: 52ch;
+  }
+  @media (max-width: 820px) {
+    .section-head { grid-template-columns: 1fr; gap: 24px; align-items: start; }
+  }
+
+  /* ============================================================
+     7 — Services (data table with SVG marks)
+  ============================================================= */
+  .services { background: var(--bg); }
+  .svc-table {
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+  }
+  .svc-head {
+    display: grid;
+    grid-template-columns: 50px 54px 150px 1fr 1fr 40px;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-weight: 500;
+  }
+  .svc-row {
+    display: grid;
+    grid-template-columns: 50px 54px 150px 1fr 1fr 40px;
+    gap: 20px;
+    padding: clamp(20px, 2.4vw, 30px) 0;
+    border-bottom: 1px solid var(--line);
+    align-items: center;
+    position: relative;
+    transition: background .15s var(--ease);
+    cursor: pointer;
+  }
+  .svc-row:last-child { border-bottom: 0; }
+  .svc-row::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: var(--accent);
+    transform: scaleY(0);
+    transition: transform .2s var(--ease);
+    transform-origin: center;
+  }
+  .svc-row:hover { background: var(--bg-alt); }
+  .svc-row:hover::before { transform: scaleY(1); }
+  .svc-row:hover .svc-num { color: var(--accent); }
+  .svc-row:hover .svc-arrow { color: var(--accent); }
+  .svc-row:hover .svc-icon svg { stroke: var(--accent); }
+
+  .svc-num {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--ink);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    transition: color .15s var(--ease);
+  }
+  .svc-icon svg {
+    width: 36px;
+    height: 36px;
+    stroke: var(--ink);
+    stroke-width: 1.25;
+    fill: none;
+    transition: stroke .15s var(--ease);
+  }
+  .svc-cat {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .svc-cat .bullet {
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--accent);
+    margin-right: 10px;
+    transform: translateY(-1px);
+  }
+  .svc-title {
+    font-size: clamp(16px, 1.35vw, 20px);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .svc-desc {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
+  .svc-arrow {
+    font-family: var(--sans);
+    font-size: 16px;
+    color: var(--ink-muted);
+    transition: color .15s var(--ease);
+    text-align: right;
+  }
+
+  @media (max-width: 1100px) {
+    .svc-head { display: none; }
+    .svc-row {
+      grid-template-columns: 40px 42px 1fr 30px;
+      grid-template-areas:
+        "num icon cat    arrow"
+        "num icon title  title"
+        ".   .    desc   desc";
+      gap: 8px 14px;
+      padding: 22px 0;
+    }
+    .svc-num { grid-area: num; align-self: start; padding-top: 4px; }
+    .svc-icon { grid-area: icon; align-self: start; }
+    .svc-icon svg { width: 28px; height: 28px; }
+    .svc-cat { grid-area: cat; padding-bottom: 4px; }
+    .svc-title { grid-area: title; }
+    .svc-desc { grid-area: desc; padding-top: 4px; }
+    .svc-arrow { grid-area: arrow; align-self: start; padding-top: 4px; }
+  }
+
+  .svc-footer {
+    padding-top: clamp(36px, 4.5vw, 56px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .svc-footer .count {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .svc-footer .count .n { color: var(--ink); font-weight: 500; }
+
+  .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    padding: 8px 0;
+    border-bottom: 1.5px solid var(--ink);
+    transition: all .15s var(--ease);
+  }
+  .link-arrow:hover { color: var(--accent); border-color: var(--accent); }
+  .link-arrow:hover .arrow { transform: translateX(3px); }
+  .link-arrow .arrow { transition: transform .2s var(--ease); display: inline-block; }
+
+  /* ============================================================
+     8 — Why (numbered rows)
+  ============================================================= */
+  .why {
+    background: var(--bg-dark);
+    color: var(--on-dark);
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    position: relative;
+  }
+  .why .section-title { color: var(--on-dark); }
+  .why .section-intro { color: var(--on-dark-soft); }
+  .why .section-tag { color: var(--on-dark-soft); }
+  .why .section-tag::before { color: var(--accent); }
+
+  .why-list { border-top: 1px solid var(--line-dark); }
+  .why-row {
+    display: grid;
+    grid-template-columns: 110px 54px 1.2fr 1.5fr;
+    gap: 32px;
+    padding: clamp(28px, 3.6vw, 48px) 0;
+    border-bottom: 1px solid var(--line-dark);
+    align-items: start;
+  }
+  .why-num {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    font-weight: 500;
+    padding-top: 8px;
+  }
+  .why-icon svg {
+    width: 44px; height: 44px;
+    stroke: var(--on-dark);
+    stroke-width: 1.2;
+    fill: none;
+    opacity: 0.85;
+  }
+  .why-title {
+    font-weight: 500;
+    font-size: clamp(22px, 2.1vw, 30px);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: var(--on-dark);
+    max-width: 18ch;
+  }
+  .why-body {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--on-dark-soft);
+    max-width: 50ch;
+    padding-top: 6px;
+  }
+  @media (max-width: 860px) {
+    .why-row { grid-template-columns: 1fr; gap: 14px; }
+    .why-num { padding-top: 0; }
+  }
+
+  /* ============================================================
+     9 — Process (SVG diagram)
+  ============================================================= */
+  .process { background: var(--bg); }
+
+  .process-diagram {
+    padding: 40px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .process-svg { width: 100%; height: auto; display: block; }
+  .process-svg .track { stroke: var(--line); stroke-width: 1; fill: none; }
+  .process-svg .arrow-head { fill: var(--ink); }
+  .process-svg .node-outer { fill: var(--bg); stroke: var(--ink); stroke-width: 1.5; }
+  .process-svg .node-dot { fill: var(--accent); }
+  .process-svg .node-label { fill: var(--ink); font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; }
+  .process-svg .node-n { fill: var(--ink); font-family: 'General Sans', sans-serif; font-size: 14px; font-weight: 500; }
+  .process-svg .tick { stroke: var(--line); stroke-width: 1; }
+
+  .process-details {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding-top: 32px;
+  }
+  .process-detail { padding-right: 20px; }
+  .process-detail-title {
+    font-size: clamp(20px, 1.8vw, 26px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+  .process-detail-body {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 34ch;
+  }
+  @media (max-width: 960px) {
+    .process-details { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  }
+  @media (max-width: 540px) {
+    .process-details { grid-template-columns: 1fr; }
+  }
+
+  .process-footer {
+    padding-top: clamp(36px, 4.5vw, 56px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  /* ============================================================
+     10 — Industries
+  ============================================================= */
+  .industries { background: var(--bg-alt); border-top: 1px solid var(--line); }
+  .ind-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+  .ind-item {
+    display: grid;
+    grid-template-columns: 50px 50px 1fr auto 28px;
+    gap: 20px;
+    align-items: center;
+    padding: clamp(20px, 2.2vw, 28px) clamp(20px, 2vw, 32px) clamp(20px, 2.2vw, 28px) 0;
+    border-bottom: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    transition: background .15s var(--ease);
+  }
+  .ind-item:nth-child(2n) {
+    border-right: 0;
+    padding-right: 0;
+    padding-left: clamp(20px, 2vw, 32px);
+  }
+  .ind-item:nth-last-child(-n+2) { border-bottom: 0; }
+  .ind-item:hover { background: var(--bg); }
+  .ind-item:hover .ind-arrow { color: var(--accent); }
+  .ind-item:hover .ind-icon svg { stroke: var(--accent); }
+
+  .ind-num {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-muted);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+  .ind-icon svg {
+    width: 32px; height: 32px;
+    stroke: var(--ink);
+    stroke-width: 1.2;
+    fill: none;
+    transition: stroke .15s var(--ease);
+  }
+  .ind-name {
+    font-size: clamp(16px, 1.45vw, 20px);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  .ind-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .ind-arrow {
+    color: var(--ink-muted);
+    font-size: 16px;
+    transition: color .15s var(--ease);
+    text-align: right;
+  }
+  @media (max-width: 860px) {
+    .ind-grid { grid-template-columns: 1fr; }
+    .ind-item,
+    .ind-item:nth-child(2n) {
+      border-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .ind-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--line); }
+    .ind-item:last-child { border-bottom: 0; }
+  }
+  @media (max-width: 540px) {
+    .ind-item { grid-template-columns: 40px 32px 1fr 24px; gap: 14px; }
+    .ind-tag { display: none; }
+  }
+
+  .ind-footer {
+    padding-top: clamp(28px, 3.5vw, 44px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .ind-footer .note {
+    font-size: 14px;
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
+
+  /* ============================================================
+     11 — Final CTA
+  ============================================================= */
+  .final {
+    background: var(--bg-dark);
+    color: var(--on-dark);
+    padding: clamp(96px, 13vw, 176px) 0;
+    border-top: 1px solid var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .final-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: clamp(40px, 6vw, 96px);
+    align-items: end;
+    position: relative;
+    z-index: 2;
+  }
+  .final-title {
+    font-weight: 500;
+    font-size: clamp(44px, 6.5vw, 104px);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--on-dark);
+    max-width: 12ch;
+  }
+  .final-title .mark { color: var(--accent); }
+  .final-title .light { font-weight: 300; color: var(--on-dark-soft); }
+  .final-meta { padding-bottom: clamp(16px, 2vw, 32px); }
+  .final-meta .mono { color: var(--on-dark-soft); margin-bottom: 24px; display: inline-block; }
+  .final-sub {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--on-dark-soft);
+    max-width: 46ch;
+    margin-bottom: 32px;
+  }
+  .final-ctas { display: flex; gap: 10px; flex-wrap: wrap; }
+  .final .btn-primary { background: var(--on-dark); color: var(--ink); }
+  .final .btn-primary:hover { background: var(--accent); color: var(--on-dark); }
+  .final .btn-ghost { color: var(--on-dark); border-color: var(--on-dark); }
+  .final .btn-ghost:hover { background: var(--on-dark); color: var(--ink); }
+  @media (max-width: 860px) {
+    .final-grid { grid-template-columns: 1fr; gap: 48px; align-items: start; }
+    .final-meta { padding-bottom: 0; }
+  }
+
+  /* Decorative background element in final CTA */
+  .final-bg {
+    position: absolute;
+    right: -80px;
+    bottom: -80px;
+    width: 480px;
+    height: 480px;
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .final-bg svg { width: 100%; height: 100%; }
+  @media (max-width: 860px) { .final-bg { right: -120px; bottom: -160px; width: 360px; height: 360px; } }
+
+  /* ============================================================
+     12 — Footer
+  ============================================================= */
+  footer {
+    background: var(--bg-dark);
+    color: var(--on-dark-soft);
+    padding: clamp(48px, 6vw, 80px) 0 28px;
+    border-top: 1px solid var(--line-dark);
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: clamp(32px, 5vw, 64px);
+    padding-bottom: clamp(36px, 4.5vw, 56px);
+    border-bottom: 1px solid var(--line-dark);
+  }
+  .foot-brand .logo { color: var(--on-dark); margin-bottom: 22px; }
+  .foot-brand .logo-text .sub { color: var(--on-dark-soft); }
+
+  .foot-tag {
+    font-size: clamp(18px, 1.5vw, 22px);
+    line-height: 1.25;
+    color: var(--on-dark);
+    max-width: 24ch;
+    margin-bottom: 28px;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+  }
+  .foot-social {
+    display: flex;
+    gap: 14px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .foot-social a { transition: color .15s var(--ease); }
+  .foot-social a:hover { color: var(--accent); }
+  .foot-social .sep { opacity: 0.4; }
+
+  .foot-col h5 {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--on-dark-soft);
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+  .foot-col h5::before { content: "§ "; color: var(--accent); }
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .foot-col a {
+    font-size: 13px;
+    color: var(--on-dark);
+    transition: color .15s var(--ease);
+  }
+  .foot-col a:hover { color: var(--accent); }
+
+  .foot-legal {
+    padding-top: 26px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+  .foot-disclaimer {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--on-dark-soft);
+    max-width: 70ch;
+  }
+  .foot-copy {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--on-dark-soft);
+    text-align: right;
+    text-transform: uppercase;
+  }
+  @media (max-width: 960px) {
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+    .foot-legal { grid-template-columns: 1fr; }
+    .foot-copy { text-align: left; }
+  }
+  @media (max-width: 540px) {
+    .foot-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     SVG DEFINITIONS — service / industry / utility icons
+============================================================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Monogram mark (used in nav + footer) -->
+    <symbol id="mark-apxe" viewBox="0 0 28 28">
+      <rect x="0.75" y="0.75" width="26.5" height="26.5" fill="currentColor" />
+      <line x1="7" y1="7" x2="21" y2="21" stroke="#F3F1EC" stroke-width="1.5" />
+      <line x1="21" y1="7" x2="7" y2="21" stroke="#F3F1EC" stroke-width="1.5" />
+      <circle cx="14" cy="14" r="2.2" fill="#B8372E" />
+    </symbol>
+
+    <!-- 01 Growth / Lead Generation — outward rays -->
+    <symbol id="svc-growth" viewBox="0 0 36 36">
+      <circle cx="18" cy="18" r="3.5" />
+      <line x1="18" y1="3" x2="18" y2="9" />
+      <line x1="18" y1="27" x2="18" y2="33" />
+      <line x1="3" y1="18" x2="9" y2="18" />
+      <line x1="27" y1="18" x2="33" y2="18" />
+      <line x1="7.5" y1="7.5" x2="11.5" y2="11.5" />
+      <line x1="24.5" y1="24.5" x2="28.5" y2="28.5" />
+      <line x1="28.5" y1="7.5" x2="24.5" y2="11.5" />
+      <line x1="11.5" y1="24.5" x2="7.5" y2="28.5" />
+    </symbol>
+
+    <!-- 02 Revenue / Sales — funnel -->
+    <symbol id="svc-revenue" viewBox="0 0 36 36">
+      <polygon points="5,6 31,6 22,18 22,29 14,29 14,18" />
+      <line x1="10" y1="12" x2="26" y2="12" />
+    </symbol>
+
+    <!-- 03 Expansion — nested squares -->
+    <symbol id="svc-expansion" viewBox="0 0 36 36">
+      <rect x="14" y="14" width="8" height="8" />
+      <rect x="9" y="9" width="18" height="18" />
+      <rect x="4" y="4" width="28" height="28" />
+    </symbol>
+
+    <!-- 04 Finance — ascending bars -->
+    <symbol id="svc-finance" viewBox="0 0 36 36">
+      <line x1="5" y1="31" x2="31" y2="31" />
+      <rect x="7" y="22" width="5" height="9" />
+      <rect x="15.5" y="15" width="5" height="16" />
+      <rect x="24" y="8" width="5" height="23" />
+    </symbol>
+
+    <!-- 05 Operations — 3x3 dots with connecting grid -->
+    <symbol id="svc-operations" viewBox="0 0 36 36">
+      <line x1="6" y1="6" x2="30" y2="6" />
+      <line x1="6" y1="18" x2="30" y2="18" />
+      <line x1="6" y1="30" x2="30" y2="30" />
+      <line x1="6" y1="6" x2="6" y2="30" />
+      <line x1="18" y1="6" x2="18" y2="30" />
+      <line x1="30" y1="6" x2="30" y2="30" />
+      <circle cx="18" cy="18" r="2.5" fill="currentColor" />
+    </symbol>
+
+    <!-- 06 Marketing — overlapping circles -->
+    <symbol id="svc-marketing" viewBox="0 0 36 36">
+      <circle cx="13" cy="18" r="9" />
+      <circle cx="23" cy="18" r="9" />
+    </symbol>
+
+    <!-- 07 Governance — shield / square in rotated square -->
+    <symbol id="svc-governance" viewBox="0 0 36 36">
+      <rect x="7" y="7" width="22" height="22" />
+      <polygon points="18,4 32,18 18,32 4,18" />
+    </symbol>
+
+    <!-- 08 Legacy / Succession — connected sequential -->
+    <symbol id="svc-legacy" viewBox="0 0 36 36">
+      <line x1="8" y1="18" x2="28" y2="18" />
+      <circle cx="8" cy="18" r="3" />
+      <circle cx="18" cy="18" r="3" />
+      <circle cx="28" cy="18" r="3" fill="currentColor" stroke="none" />
+    </symbol>
+
+    <!-- Trust point icons -->
+    <symbol id="trust-endtoend" viewBox="0 0 44 44">
+      <line x1="6" y1="22" x2="38" y2="22" />
+      <circle cx="6" cy="22" r="3" />
+      <circle cx="16" cy="22" r="2" />
+      <circle cx="28" cy="22" r="2" />
+      <circle cx="38" cy="22" r="3" fill="currentColor" stroke="none" />
+    </symbol>
+    <symbol id="trust-execution" viewBox="0 0 44 44">
+      <polyline points="6,28 16,18 24,24 38,10" />
+      <polyline points="30,10 38,10 38,18" />
+    </symbol>
+    <symbol id="trust-india" viewBox="0 0 44 44">
+      <circle cx="22" cy="22" r="16" />
+      <line x1="6" y1="22" x2="38" y2="22" />
+      <path d="M22 6 Q 32 22 22 38 Q 12 22 22 6 Z" />
+    </symbol>
+
+    <!-- Why icons -->
+    <symbol id="why-exec" viewBox="0 0 44 44">
+      <rect x="8" y="10" width="28" height="24" />
+      <line x1="14" y1="18" x2="30" y2="18" />
+      <line x1="14" y1="24" x2="22" y2="24" />
+      <circle cx="30" cy="28" r="3" fill="currentColor" stroke="none" opacity="0.6"/>
+    </symbol>
+    <symbol id="why-diag" viewBox="0 0 44 44">
+      <circle cx="20" cy="20" r="11" />
+      <line x1="28" y1="28" x2="36" y2="36" />
+      <line x1="20" y1="15" x2="20" y2="25" />
+      <line x1="15" y1="20" x2="25" y2="20" />
+    </symbol>
+    <symbol id="why-int" viewBox="0 0 44 44">
+      <circle cx="14" cy="16" r="6" />
+      <circle cx="30" cy="16" r="6" />
+      <circle cx="22" cy="30" r="6" />
+      <line x1="14" y1="22" x2="22" y2="24" />
+      <line x1="30" y1="22" x2="22" y2="24" />
+      <line x1="19" y1="16" x2="25" y2="16" />
+    </symbol>
+    <symbol id="why-cal" viewBox="0 0 44 44">
+      <rect x="6" y="26" width="8" height="12" />
+      <rect x="18" y="18" width="8" height="20" />
+      <rect x="30" y="10" width="8" height="28" />
+    </symbol>
+
+    <!-- Stat icons -->
+    <symbol id="stat-areas" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="7" height="7" />
+      <rect x="14" y="3" width="7" height="7" />
+      <rect x="3" y="14" width="7" height="7" />
+      <rect x="14" y="14" width="7" height="7" />
+    </symbol>
+    <symbol id="stat-sectors" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" />
+      <line x1="12" y1="3" x2="12" y2="21" />
+      <line x1="3" y1="12" x2="21" y2="12" />
+      <line x1="5.6" y1="5.6" x2="18.4" y2="18.4" />
+      <line x1="18.4" y1="5.6" x2="5.6" y2="18.4" />
+    </symbol>
+    <symbol id="stat-scale" viewBox="0 0 24 24">
+      <path d="M4 20 L4 10 L12 10 L12 6 L20 6 L20 20 Z" />
+      <line x1="8" y1="14" x2="8" y2="18" />
+      <line x1="16" y1="10" x2="16" y2="18" />
+    </symbol>
+    <symbol id="stat-model" viewBox="0 0 24 24">
+      <line x1="3" y1="12" x2="21" y2="12" />
+      <polyline points="16,7 21,12 16,17" />
+      <circle cx="3" cy="12" r="2" fill="currentColor" stroke="none" />
+    </symbol>
+
+    <!-- Industry icons -->
+    <symbol id="ind-finance" viewBox="0 0 32 32">
+      <rect x="3" y="26" width="26" height="3" />
+      <polygon points="16,5 27,13 5,13" />
+      <line x1="8" y1="14" x2="8" y2="25" />
+      <line x1="16" y1="14" x2="16" y2="25" />
+      <line x1="24" y1="14" x2="24" y2="25" />
+    </symbol>
+    <symbol id="ind-mfg" viewBox="0 0 32 32">
+      <path d="M4 28 L4 14 L12 19 L12 14 L20 19 L20 14 L28 19 L28 28 Z" />
+      <rect x="8" y="22" width="3" height="3" fill="currentColor" stroke="none" opacity="0.4" />
+      <rect x="16" y="22" width="3" height="3" fill="currentColor" stroke="none" opacity="0.4" />
+      <rect x="24" y="22" width="3" height="3" fill="currentColor" stroke="none" opacity="0.4" />
+    </symbol>
+    <symbol id="ind-realestate" viewBox="0 0 32 32">
+      <rect x="4" y="12" width="8" height="16" />
+      <rect x="14" y="6" width="8" height="22" />
+      <rect x="24" y="16" width="5" height="12" />
+      <rect x="7" y="18" width="2" height="3" fill="currentColor" stroke="none" opacity="0.4" />
+      <rect x="17" y="12" width="2" height="3" fill="currentColor" stroke="none" opacity="0.4" />
+    </symbol>
+    <symbol id="ind-tech" viewBox="0 0 32 32">
+      <rect x="3" y="6" width="26" height="17" />
+      <line x1="3" y1="20" x2="29" y2="20" />
+      <rect x="13" y="23" width="6" height="3" />
+      <line x1="9" y1="28" x2="23" y2="28" />
+    </symbol>
+    <symbol id="ind-health" viewBox="0 0 32 32">
+      <path d="M16 4 L16 28 M4 16 L28 16" stroke-width="3" />
+      <circle cx="16" cy="16" r="12" />
+    </symbol>
+    <symbol id="ind-retail" viewBox="0 0 32 32">
+      <path d="M5 10 L27 10 L25 27 L7 27 Z" />
+      <path d="M11 10 Q 11 5 16 5 Q 21 5 21 10" />
+    </symbol>
+    <symbol id="ind-edu" viewBox="0 0 32 32">
+      <polygon points="3,13 16,7 29,13 16,19" />
+      <path d="M9 16 L9 23 Q 16 28 23 23 L23 16" />
+      <line x1="27" y1="13" x2="27" y2="22" />
+    </symbol>
+    <symbol id="ind-logistics" viewBox="0 0 32 32">
+      <rect x="3" y="10" width="17" height="12" />
+      <path d="M20 14 L27 14 L29 18 L29 22 L20 22 Z" />
+      <circle cx="9" cy="24" r="2.5" fill="currentColor" stroke="none" />
+      <circle cx="24" cy="24" r="2.5" fill="currentColor" stroke="none" />
+    </symbol>
+
+    <!-- Large decorative mark -->
+    <symbol id="deco-mark" viewBox="0 0 480 480">
+      <circle cx="240" cy="240" r="230" fill="none" stroke="currentColor" stroke-width="1" />
+      <circle cx="240" cy="240" r="180" fill="none" stroke="currentColor" stroke-width="1" />
+      <circle cx="240" cy="240" r="130" fill="none" stroke="currentColor" stroke-width="1" />
+      <line x1="10" y1="240" x2="470" y2="240" stroke="currentColor" stroke-width="1" />
+      <line x1="240" y1="10" x2="240" y2="470" stroke="currentColor" stroke-width="1" />
+      <circle cx="240" cy="240" r="6" fill="currentColor" />
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============================================================
+     META STRIP
+============================================================= -->
+<div class="meta-strip">
+  <div class="container">
+    <div class="left">
+      <span><span class="dot"></span>APXE / CONSULTANTS</span>
+      <span>BUSINESS ADVISORY · EST. IN INDIA</span>
+    </div>
+    <div class="right">
+      <a href="#">EN</a>
+      <span>·</span>
+      <a href="#contact">BOOK A CALL →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     NAV
+============================================================= -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#" class="logo" aria-label="Apxe Consultants — Home">
+      <svg aria-hidden="true"><use href="#mark-apxe"/></svg>
+      <span class="logo-text">APXE<span class="slash">/</span><span class="sub">Consultants</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#"><span class="n">01</span> Home</a>
+      <a href="#about"><span class="n">02</span> About</a>
+      <a href="#services"><span class="n">03</span> Services</a>
+      <a href="#process"><span class="n">04</span> Process</a>
+      <a href="#industries"><span class="n">05</span> Industries</a>
+      <a href="#insights"><span class="n">06</span> Insights</a>
+      <a href="#contact"><span class="n">07</span> Contact</a>
+    </nav>
+    <a href="#contact" class="nav-cta">
+      <span class="dot" aria-hidden="true"></span>
+      Book a call <span class="arrow">→</span>
+    </a>
+    <button class="nav-mobile" aria-label="Menu">MENU ☰</button>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+============================================================= -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-frame">
+      <span class="crop-mark crop-tl"></span>
+      <span class="crop-mark crop-tr"></span>
+      <span class="crop-mark crop-bl"></span>
+      <span class="crop-mark crop-br"></span>
+
+      <div class="hero-meta-row mono">
+        <div class="left">File · H.001 / Business Advisory</div>
+        <div class="center"><span class="status"></span>Now accepting engagements · FY 26</div>
+        <div class="right">Nashik · Mumbai · Singapore</div>
+      </div>
+
+      <div class="hero-main">
+        <h1 class="hero-title">
+          When your business needs to move forward,
+          <span class="light">we figure out</span>
+          <span class="mark">exactly how.</span>
+        </h1>
+
+        <div class="hero-graphic" aria-hidden="true">
+          <!-- Hero composition: radar / positioning diagram -->
+          <svg viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg" role="presentation">
+            <!-- Grid underlay -->
+            <g stroke="#D4CFC1" stroke-width="0.5" opacity="0.6">
+              <line x1="0" y1="57.5" x2="460" y2="57.5"/>
+              <line x1="0" y1="115" x2="460" y2="115"/>
+              <line x1="0" y1="172.5" x2="460" y2="172.5"/>
+              <line x1="0" y1="287.5" x2="460" y2="287.5"/>
+              <line x1="0" y1="345" x2="460" y2="345"/>
+              <line x1="0" y1="402.5" x2="460" y2="402.5"/>
+              <line x1="57.5" y1="0" x2="57.5" y2="460"/>
+              <line x1="115" y1="0" x2="115" y2="460"/>
+              <line x1="172.5" y1="0" x2="172.5" y2="460"/>
+              <line x1="287.5" y1="0" x2="287.5" y2="460"/>
+              <line x1="345" y1="0" x2="345" y2="460"/>
+              <line x1="402.5" y1="0" x2="402.5" y2="460"/>
+            </g>
+
+            <!-- Outer frame -->
+            <rect x="0.75" y="0.75" width="458.5" height="458.5" fill="none" stroke="#111110" stroke-width="1.5"/>
+
+            <!-- Concentric rings -->
+            <circle cx="230" cy="230" r="205" fill="none" stroke="#111110" stroke-width="1"/>
+            <circle cx="230" cy="230" r="155" fill="none" stroke="#111110" stroke-width="1"/>
+            <circle cx="230" cy="230" r="105" fill="none" stroke="#111110" stroke-width="1"/>
+            <circle cx="230" cy="230" r="55" fill="none" stroke="#111110" stroke-width="1"/>
+
+            <!-- Axes -->
+            <line x1="230" y1="25" x2="230" y2="435" stroke="#111110" stroke-width="1"/>
+            <line x1="25" y1="230" x2="435" y2="230" stroke="#111110" stroke-width="1"/>
+
+            <!-- Diagonal highlight -->
+            <line x1="84" y1="84" x2="376" y2="376" stroke="#B8372E" stroke-width="1.25" stroke-dasharray="3 3"/>
+
+            <!-- Service nodes (8 positions around ring) -->
+            <g>
+              <circle cx="230" cy="75" r="4" fill="#111110"/>
+              <circle cx="340" cy="120" r="4" fill="#111110"/>
+              <circle cx="385" cy="230" r="4" fill="#111110"/>
+              <circle cx="340" cy="340" r="4" fill="#111110"/>
+              <circle cx="230" cy="385" r="4" fill="#111110"/>
+              <circle cx="120" cy="340" r="4" fill="#111110"/>
+              <circle cx="75" cy="230" r="4" fill="#111110"/>
+              <circle cx="120" cy="120" r="4" fill="#111110"/>
+            </g>
+
+            <!-- Center mark -->
+            <circle cx="230" cy="230" r="10" fill="#B8372E"/>
+            <circle cx="230" cy="230" r="20" fill="none" stroke="#B8372E" stroke-width="1"/>
+
+            <!-- Corner labels (mono) -->
+            <g font-family="JetBrains Mono, monospace" font-size="9" font-weight="500" fill="#7A766D" letter-spacing="0.5">
+              <text x="12" y="16">N · 000</text>
+              <text x="404" y="16" text-anchor="start">NE · 045</text>
+              <text x="12" y="452">SW · 225</text>
+              <text x="448" y="452" text-anchor="end">SE · 135</text>
+            </g>
+
+            <!-- Scale ticks -->
+            <g stroke="#7A766D" stroke-width="1">
+              <line x1="0" y1="230" x2="8" y2="230"/>
+              <line x1="452" y1="230" x2="460" y2="230"/>
+              <line x1="230" y1="0" x2="230" y2="8"/>
+              <line x1="230" y1="452" x2="230" y2="460"/>
+            </g>
+
+            <!-- Center label -->
+            <g font-family="JetBrains Mono, monospace" font-weight="500" fill="#111110">
+              <text x="230" y="250" text-anchor="middle" font-size="9" letter-spacing="0.8" fill="#B8372E">APXE/CORE</text>
+            </g>
+
+            <!-- Radial labels on outermost ring -->
+            <g font-family="JetBrains Mono, monospace" font-size="7.5" font-weight="500" fill="#3A3834" letter-spacing="0.8">
+              <text x="230" y="68" text-anchor="middle">GROWTH</text>
+              <text x="347" y="110" text-anchor="middle">REVENUE</text>
+              <text x="395" y="232" text-anchor="start">EXPAND</text>
+              <text x="347" y="357" text-anchor="middle">FINANCE</text>
+              <text x="230" y="398" text-anchor="middle">OPS.</text>
+              <text x="113" y="357" text-anchor="middle">MKTG.</text>
+              <text x="65" y="232" text-anchor="end">GOVERN</text>
+              <text x="113" y="110" text-anchor="middle">LEGACY</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="hero-bottom">
+        <p class="hero-sub">
+          Apxe is a business advisory firm that partners with founders, SMEs, and growing companies on the things that actually move the needle — pipelines, sales, market entry, financial decisions, operations, governance, and succession.
+        </p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Talk to a consultant <span class="arrow">→</span></a>
+          <a href="#services" class="btn btn-ghost">See what we do</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATS
+============================================================= -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-top">
+          <span class="stat-label mono mono-sm">01 — Advisory areas</span>
+          <span class="stat-icon"><svg><use href="#stat-areas"/></svg></span>
+        </div>
+        <span class="stat-value">08<span class="dot">.</span></span>
+      </div>
+      <div class="stat">
+        <div class="stat-top">
+          <span class="stat-label mono mono-sm">02 — Sectors served</span>
+          <span class="stat-icon"><svg><use href="#stat-sectors"/></svg></span>
+        </div>
+        <span class="stat-value">08<span class="dot">.</span></span>
+      </div>
+      <div class="stat">
+        <div class="stat-top">
+          <span class="stat-label mono mono-sm">03 — Client scale</span>
+          <span class="stat-icon"><svg><use href="#stat-scale"/></svg></span>
+        </div>
+        <span class="stat-value">SME<span class="unit">to Enterprise</span></span>
+      </div>
+      <div class="stat">
+        <div class="stat-top">
+          <span class="stat-label mono mono-sm">04 — Engagement model</span>
+          <span class="stat-icon"><svg><use href="#stat-model"/></svg></span>
+        </div>
+        <span class="stat-value">End-to-end<span class="dot">.</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TRUST
+============================================================= -->
+<section class="trust">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-label">
+        <div class="mono">Positioning</div>
+        <p class="trust-quote">
+          We don't hand over a report and disappear. We stay until the work is running.
+        </p>
+        <div class="trust-attr">
+          <span>— Apxe operating principle</span>
+          <span>§ 001</span>
+        </div>
+      </div>
+
+      <div class="trust-points">
+        <div class="trust-point">
+          <span class="icon"><svg><use href="#trust-endtoend"/></svg></span>
+          <span class="num">§ 01</span>
+          <div>
+            <h4>End-to-end advisory</h4>
+            <p>Lead generation to succession planning — one firm, one relationship, the full lifecycle. No handoffs between siloed teams.</p>
+          </div>
+        </div>
+        <div class="trust-point">
+          <span class="icon"><svg><use href="#trust-execution"/></svg></span>
+          <span class="num">§ 02</span>
+          <div>
+            <h4>Built around execution</h4>
+            <p>Strategies are only useful when they work in practice. We coach your team, adjust as we learn, and stay until the output is real.</p>
+          </div>
+        </div>
+        <div class="trust-point">
+          <span class="icon"><svg><use href="#trust-india"/></svg></span>
+          <span class="num">§ 03</span>
+          <div>
+            <h4>Grounded in Indian business realities</h4>
+            <p>We understand the market, the regulations, and the challenges specific to Indian businesses — while applying frameworks that hold up globally.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICES
+============================================================= -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Services · 03</div>
+        <h2 class="section-title">
+          <span class="light">Eight areas.</span><br/>
+          One unified<br/>offering<span class="mark">.</span>
+        </h2>
+      </div>
+      <p class="section-intro">
+        Some clients come to us with one specific problem. Others bring us in as a long-term partner across multiple fronts. Either way, the goal is the same — move the business forward, with discipline.
+      </p>
+    </div>
+
+    <div class="svc-table">
+      <div class="svc-head">
+        <div>No.</div>
+        <div>Mark</div>
+        <div>Category</div>
+        <div>Service</div>
+        <div>Brief</div>
+        <div></div>
+      </div>
+
+      <a href="#" class="svc-row">
+        <div class="svc-num">01</div>
+        <div class="svc-icon"><svg><use href="#svc-growth"/></svg></div>
+        <div class="svc-cat"><span class="bullet"></span>Growth</div>
+        <div class="svc-title">Lead Generation &amp; Demand Creation</div>
+        <div class="svc-desc">Stop relying on who you know. Build a system that brings the right people to your door, every month.</div>
+        <div class="svc-arrow">→</div>
+      </a>
+
+      <a href="#" class="svc-row">
+        <div class="svc-num">02</div>
+        <div class="svc-icon"><svg><use href="#svc-revenue"/></svg></div>
+        <div class="svc-cat"><span class="bullet"></span>Revenue</div>
+        <div class="svc-title">Sales &amp; Business Development</div>
+        <div class="svc-desc">A pipeline is only valuable when it converts. We build the process that makes that happen reliably.</div>
+        <div class="svc-arrow">→</div>
+      </a>
+
+      <a href="#" class="svc-row">
+        <div class="svc-num">03</div>
+        <div class="svc-icon"><svg><use href="#svc-expansion"/></svg></div>
+        <div class="svc-cat"><span class="bullet"></span>Expansion</div>
+        <div class="svc-title">Growth Strategy &amp; Market Expansion</div>
+        <div class="svc-desc">New market or new revenue line — we design the entry strategy, positioning, and commercial infrastructure.</div>
+        <div class="svc-arrow">→</div>
+      </a>
+
+      <a href="#" class="svc-row">
+        <div class="svc-num">04</div>
+        <div class="svc-icon"><svg><use href="#svc-finance"/></svg></div>
+        <div class="svc-cat"><span class="bullet"></span>Finance</div>
+        <div class="svc-title">Financial Advisory</div>
+        <div class="svc-desc">Clarity on investment, cash flow, and structure. The financial picture you need to decide confidently.</div>
+        <div class="svc-arrow">→</div>
+      </a>
+
+      <a href="#" class="svc-row">
+        <div class="svc-num">05</div>
+        <div class="svc-icon"><svg><use href="#svc-operations"/></svg></div>
+        <div class="svc-cat"><span class="bullet"></span>Operations</div>
+        <div class="svc-title">Operational Efficiency</div>
+        <div class="svc-desc">Find where your operations are leaking time and money, and fix it. An engine that supports the next phase of growth.</div>
+        <div class="svc-arrow">→</div>
+      </a>
+
+      <a href="#" class="svc-row">
+        <div class="svc-num">06</div>
+        <div class="svc-icon"><svg><use href="#svc-marketing"/></svg></div>
+        <div class="svc-cat"><span class="bullet"></span>Marketing</div>
+        <div class="svc-title">Marketing &amp; Sales Advisory</div>
+        <div class="svc-desc">Brand positioning, digital presence, and a marketing-to-sales handoff that doesn't lose leads between departments.</div>
+        <div class="svc-arrow">→</div>
+      </a>
+
+      <a href="#" class="svc-row">
+        <div class="svc-num">07</div>
+        <div class="svc-icon"><svg><use href="#svc-governance"/></svg></div>
+        <div class="svc-cat"><span class="bullet"></span>Governance</div>
+        <div class="svc-title">Compliance &amp; Risk Management</div>
+        <div class="svc-desc">Structured, compliant, protected — before the business becomes too exposed to run on informal governance.</div>
+        <div class="svc-arrow">→</div>
+      </a>
+
+      <a href="#" class="svc-row">
+        <div class="svc-num">08</div>
+        <div class="svc-icon"><svg><use href="#svc-legacy"/></svg></div>
+        <div class="svc-cat"><span class="bullet"></span>Legacy</div>
+        <div class="svc-title">Succession &amp; Exit Planning</div>
+        <div class="svc-desc">Plan the transition before the pressure is on — next generation, acquirer, or a business ready for either option.</div>
+        <div class="svc-arrow">→</div>
+      </a>
+    </div>
+
+    <div class="svc-footer">
+      <div class="count">
+        <span class="n">8</span> services &nbsp;/&nbsp; 1 firm &nbsp;/&nbsp; end-to-end engagement
+      </div>
+      <a href="#" class="link-arrow">Explore all services in detail <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY
+============================================================= -->
+<section class="section why" id="about">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Positioning · 04</div>
+        <h2 class="section-title">
+          What separates us<br/>
+          <span class="light">from a standard</span><br/>
+          engagement<span class="mark">.</span>
+        </h2>
+      </div>
+      <p class="section-intro">
+        Consulting has a reputation problem — too many slide decks, not enough impact. We work differently, and deliberately so. These four principles shape every engagement we take on.
+      </p>
+    </div>
+
+    <div class="why-list">
+      <div class="why-row">
+        <div class="why-num">01 / EXECUTION</div>
+        <div class="why-icon"><svg><use href="#why-exec"/></svg></div>
+        <h3 class="why-title">We stay for the execution.</h3>
+        <p class="why-body">Most firms write the plan and hand it over. We treat delivery as part of the job — coaching your team, testing what works, and staying until the output is real.</p>
+      </div>
+
+      <div class="why-row">
+        <div class="why-num">02 / DIAGNOSIS</div>
+        <div class="why-icon"><svg><use href="#why-diag"/></svg></div>
+        <h3 class="why-title">We start with the right questions.</h3>
+        <p class="why-body">Before we recommend anything, we take time to actually understand your business. The correct diagnosis changes everything — which is why most engagements fail when this step is rushed.</p>
+      </div>
+
+      <div class="why-row">
+        <div class="why-num">03 / INTEGRATION</div>
+        <div class="why-icon"><svg><use href="#why-int"/></svg></div>
+        <h3 class="why-title">One firm for the full picture.</h3>
+        <p class="why-body">Lead generation, financial planning, succession, compliance — these aren't separate problems. We see them together, and advise accordingly.</p>
+      </div>
+
+      <div class="why-row">
+        <div class="why-num">04 / CALIBRATION</div>
+        <div class="why-icon"><svg><use href="#why-cal"/></svg></div>
+        <h3 class="why-title">Sized for where you actually are.</h3>
+        <p class="why-body">Whether you're 5 people or 500, a founder or a board — we calibrate the depth of engagement to your stage, not to a standard package.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROCESS — SVG flow diagram
+============================================================= -->
+<section class="section process" id="process">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Method · 05</div>
+        <h2 class="section-title">
+          Four steps.<br/>
+          Every engagement.<br/>
+          <span class="light">No shortcuts</span><span class="mark">.</span>
+        </h2>
+      </div>
+      <p class="section-intro">
+        A structured approach produces better outcomes than an improvised one. Here's what every Apxe engagement looks like in practice — from the first conversation to the moment the work is running on its own.
+      </p>
+    </div>
+
+    <div class="process-diagram">
+      <svg class="process-svg" viewBox="0 0 1200 180" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <!-- Measurement ticks at top -->
+        <g class="tick">
+          <line x1="80" y1="22" x2="80" y2="30"/>
+          <line x1="380" y1="22" x2="380" y2="30"/>
+          <line x1="680" y1="22" x2="680" y2="30"/>
+          <line x1="980" y1="22" x2="980" y2="30"/>
+          <line x1="80" y1="26" x2="980" y2="26"/>
+        </g>
+        <g font-family="JetBrains Mono, monospace" font-size="10" font-weight="500" fill="#7A766D" letter-spacing="0.5">
+          <text x="80" y="15" text-anchor="middle">T0</text>
+          <text x="380" y="15" text-anchor="middle">T1</text>
+          <text x="680" y="15" text-anchor="middle">T2</text>
+          <text x="980" y="15" text-anchor="middle">T3</text>
+        </g>
+
+        <!-- Track line -->
+        <line x1="80" y1="90" x2="980" y2="90" class="track" stroke-dasharray="4 4"/>
+
+        <!-- Arrow terminator after step 4 -->
+        <line x1="980" y1="90" x2="1130" y2="90" class="track"/>
+        <polygon points="1130,83 1145,90 1130,97" class="arrow-head" fill="#111110"/>
+
+        <!-- Node 1 -->
+        <g>
+          <circle cx="80" cy="90" r="30" class="node-outer"/>
+          <circle cx="80" cy="90" r="5" class="node-dot"/>
+          <text x="80" y="156" text-anchor="middle" class="node-label">01 / DISCOVER</text>
+        </g>
+
+        <!-- Node 2 -->
+        <g>
+          <circle cx="380" cy="90" r="30" class="node-outer"/>
+          <circle cx="380" cy="90" r="5" class="node-dot"/>
+          <text x="380" y="156" text-anchor="middle" class="node-label">02 / DIAGNOSE</text>
+        </g>
+
+        <!-- Node 3 -->
+        <g>
+          <circle cx="680" cy="90" r="30" class="node-outer"/>
+          <circle cx="680" cy="90" r="5" class="node-dot"/>
+          <text x="680" y="156" text-anchor="middle" class="node-label">03 / DESIGN</text>
+        </g>
+
+        <!-- Node 4 -->
+        <g>
+          <circle cx="980" cy="90" r="30" class="node-outer"/>
+          <circle cx="980" cy="90" r="5" class="node-dot"/>
+          <text x="980" y="156" text-anchor="middle" class="node-label">04 / DEPLOY</text>
+        </g>
+
+        <!-- Output label -->
+        <text x="1155" y="110" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500" fill="#B8372E" letter-spacing="0.5">→ RUNNING</text>
+      </svg>
+
+      <div class="process-details">
+        <div class="process-detail">
+          <h3 class="process-detail-title">Discover</h3>
+          <p class="process-detail-body">We sit with you before we say anything. Listening, asking the right questions, mapping what's actually going on — not what the surface suggests.</p>
+        </div>
+        <div class="process-detail">
+          <h3 class="process-detail-title">Diagnose</h3>
+          <p class="process-detail-body">We identify the real obstacles — not just the ones that are easy to see. This is where most advisory firms skip a step. We don't.</p>
+        </div>
+        <div class="process-detail">
+          <h3 class="process-detail-title">Design</h3>
+          <p class="process-detail-body">We build the plan together. Your context, your team, your constraints shape the solution — not a template from a previous engagement.</p>
+        </div>
+        <div class="process-detail">
+          <h3 class="process-detail-title">Deploy &amp; Support</h3>
+          <p class="process-detail-body">We stay through implementation. Regular check-ins, hands-on support, honest reassessment. We are not done until the work runs on its own.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-footer">
+      <div class="mono mono-sm" style="color: var(--ink-muted);">04 STEPS / EVERY ENGAGEMENT</div>
+      <a href="#" class="link-arrow">See the full engagement model <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INDUSTRIES
+============================================================= -->
+<section class="section industries" id="industries">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">Sectors · 06</div>
+        <h2 class="section-title">
+          Sectors we<br/>
+          <span class="light">understand before</span><br/>
+          we advise<span class="mark">.</span>
+        </h2>
+      </div>
+      <p class="section-intro">
+        The core principles of good advisory apply across industries. What changes is how we apply them. We take the time to understand the commercial realities, regulatory environment, and competitive dynamics of your sector before we start.
+      </p>
+    </div>
+
+    <div class="ind-grid">
+      <div class="ind-item">
+        <span class="ind-num">01</span>
+        <span class="ind-icon"><svg><use href="#ind-finance"/></svg></span>
+        <h3 class="ind-name">Financial &amp; Professional Services</h3>
+        <span class="ind-tag">BFSI / Prof.</span>
+        <span class="ind-arrow">→</span>
+      </div>
+      <div class="ind-item">
+        <span class="ind-num">02</span>
+        <span class="ind-icon"><svg><use href="#ind-mfg"/></svg></span>
+        <h3 class="ind-name">Manufacturing &amp; Industrial</h3>
+        <span class="ind-tag">Mfg.</span>
+        <span class="ind-arrow">→</span>
+      </div>
+      <div class="ind-item">
+        <span class="ind-num">03</span>
+        <span class="ind-icon"><svg><use href="#ind-realestate"/></svg></span>
+        <h3 class="ind-name">Real Estate &amp; Infrastructure</h3>
+        <span class="ind-tag">RE / Infra</span>
+        <span class="ind-arrow">→</span>
+      </div>
+      <div class="ind-item">
+        <span class="ind-num">04</span>
+        <span class="ind-icon"><svg><use href="#ind-tech"/></svg></span>
+        <h3 class="ind-name">Technology &amp; SaaS</h3>
+        <span class="ind-tag">Tech</span>
+        <span class="ind-arrow">→</span>
+      </div>
+      <div class="ind-item">
+        <span class="ind-num">05</span>
+        <span class="ind-icon"><svg><use href="#ind-health"/></svg></span>
+        <h3 class="ind-name">Healthcare &amp; Life Sciences</h3>
+        <span class="ind-tag">Health</span>
+        <span class="ind-arrow">→</span>
+      </div>
+      <div class="ind-item">
+        <span class="ind-num">06</span>
+        <span class="ind-icon"><svg><use href="#ind-retail"/></svg></span>
+        <h3 class="ind-name">Retail &amp; Consumer Goods</h3>
+        <span class="ind-tag">Retail / CPG</span>
+        <span class="ind-arrow">→</span>
+      </div>
+      <div class="ind-item">
+        <span class="ind-num">07</span>
+        <span class="ind-icon"><svg><use href="#ind-edu"/></svg></span>
+        <h3 class="ind-name">Education &amp; Edtech</h3>
+        <span class="ind-tag">Edu</span>
+        <span class="ind-arrow">→</span>
+      </div>
+      <div class="ind-item">
+        <span class="ind-num">08</span>
+        <span class="ind-icon"><svg><use href="#ind-logistics"/></svg></span>
+        <h3 class="ind-name">Logistics &amp; Supply Chain</h3>
+        <span class="ind-tag">Logistics</span>
+        <span class="ind-arrow">→</span>
+      </div>
+    </div>
+
+    <div class="ind-footer">
+      <p class="note">Not listed above? Get in touch. We will tell you directly whether we have the right experience for your sector.</p>
+      <a href="#contact" class="link-arrow">Ask about your sector <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FINAL CTA
+============================================================= -->
+<section class="final" id="contact">
+  <div class="final-bg" aria-hidden="true">
+    <svg viewBox="0 0 480 480"><use href="#deco-mark" style="color:#ECE8DE"/></svg>
+  </div>
+  <div class="container">
+    <div class="final-grid">
+      <h2 class="final-title">
+        Let's talk about<br/>
+        <span class="light">your business</span><span class="mark">.</span>
+      </h2>
+      <div class="final-meta">
+        <div class="mono">§ Next Step / Get in touch</div>
+        <p class="final-sub">
+          No agenda, no obligation. Just a straightforward conversation about where things stand and where you want to take them. We'll listen, ask a few questions, and give you our honest view on whether we're the right people to help.
+        </p>
+        <div class="final-ctas">
+          <a href="#" class="btn btn-primary">Book a free call <span class="arrow">→</span></a>
+          <a href="#services" class="btn btn-ghost">Explore services</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================= -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo">
+          <svg aria-hidden="true" style="width:28px;height:28px;"><use href="#mark-apxe"/></svg>
+          <span class="logo-text">APXE<span class="slash">/</span><span class="sub">Consultants</span></span>
+        </div>
+        <p class="foot-tag">Business advisory built around your growth.</p>
+        <div class="foot-social">
+          <a href="#">LinkedIn</a>
+          <span class="sep">·</span>
+          <a href="#">Email</a>
+          <span class="sep">·</span>
+          <a href="#">Phone</a>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#">Lead Generation</a></li>
+          <li><a href="#">Sales &amp; BD</a></li>
+          <li><a href="#">Growth Strategy</a></li>
+          <li><a href="#">Financial Advisory</a></li>
+          <li><a href="#">Operations</a></li>
+          <li><a href="#">Marketing Advisory</a></li>
+          <li><a href="#">Compliance &amp; Risk</a></li>
+          <li><a href="#">Succession Planning</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#process">How We Work</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#insights">Insights</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-legal">
+      <p class="foot-disclaimer">
+        Apxe Consultants is a business advisory and consultancy firm. Content on this website is for general informational purposes only and does not constitute legal, financial, or regulatory advice. For advice specific to your situation, please speak with one of our consultants directly.
+      </p>
+      <p class="foot-copy">© 2026 Apxe Consultants</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll state — only behavior retained
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 8) nav.classList.add('is-scrolled');
+    else nav.classList.remove('is-scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>
+
+</body>
+</html>
