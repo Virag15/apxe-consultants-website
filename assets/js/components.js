@@ -3,22 +3,22 @@
 //  Injects markup at runtime so every page stays in sync.
 // ============================================================
 (function () {
-  // Use absolute URLs. Clean URLs (no .html) are handled by .htaccess.
+  // Absolute URLs with .html extension, works natively on any static host.
   var path = function (p) {
-    if (!p || p === '/') return '/';
-    return '/' + p.replace(/^\/+/, '').replace(/\.html$/, '');
+    if (!p || p === '/') return '/index.html';
+    return '/' + p.replace(/^\/+/, '');
   };
 
   // Determine active page from URL pathname
-  var pathname = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+  var pathname = window.location.pathname.replace(/\/$/, '') || '/index.html';
   var inServices = pathname.indexOf('/services') === 0;
   var inWork = pathname.indexOf('/work') === 0;
   var isActive = function (key) {
-    if (key === 'home' && (pathname === '/' || pathname === '/index')) return 'is-active';
-    if (key === 'about' && pathname === '/about') return 'is-active';
+    if (key === 'home' && (pathname === '/' || pathname === '/index.html')) return 'is-active';
+    if (key === 'about' && pathname === '/about.html') return 'is-active';
     if (key === 'services' && inServices) return 'is-active';
     if (key === 'work' && inWork) return 'is-active';
-    if (key === 'contact' && pathname === '/contact') return 'is-active';
+    if (key === 'contact' && pathname === '/contact.html') return 'is-active';
     return '';
   };
 
@@ -32,10 +32,10 @@
           '</a>' +
           '<nav class="nav-links" aria-label="Primary">' +
             '<a href="' + path('') + '" class="' + isActive('home') + '">Home</a>' +
-            '<a href="' + path('about') + '" class="' + isActive('about') + '">About</a>' +
-            '<a href="' + path('services') + '" class="' + isActive('services') + '">Services</a>' +
-            '<a href="' + path('work') + '" class="' + isActive('work') + '">Work</a>' +
-            '<a href="' + path('contact') + '" class="' + isActive('contact') + '">Contact</a>' +
+            '<a href="' + path('about.html') + '" class="' + isActive('about') + '">About</a>' +
+            '<a href="' + path('services.html') + '" class="' + isActive('services') + '">Services</a>' +
+            '<a href="' + path('work.html') + '" class="' + isActive('work') + '">Work</a>' +
+            '<a href="' + path('contact.html') + '" class="' + isActive('contact') + '">Contact</a>' +
           '</nav>' +
           '<div class="nav-actions">' +
             '<a href="https://calendly.com/apxe-consultants" target="_blank" rel="noopener" class="btn btn-primary">Book a discovery call</a>' +
@@ -60,36 +60,36 @@
             '<div class="locations">Ahmedabad, Gujarat, India</div>' +
           '</div>' +
           '<div class="foot-col"><h5>Services</h5><ul>' +
-            '<li><a href="' + path('services/lead-generation') + '">Lead Generation</a></li>' +
-            '<li><a href="' + path('services/sales') + '">Sales &amp; BD</a></li>' +
-            '<li><a href="' + path('services/growth-strategy') + '">Growth Strategy</a></li>' +
-            '<li><a href="' + path('services/financial-advisory') + '">Financial Advisory</a></li>' +
-            '<li><a href="' + path('services/operations') + '">Operations</a></li>' +
-            '<li><a href="' + path('services/marketing') + '">Marketing</a></li>' +
-            '<li><a href="' + path('services/compliance') + '">Compliance &amp; Risk</a></li>' +
-            '<li><a href="' + path('services/succession') + '">Succession</a></li>' +
+            '<li><a href="' + path('services/lead-generation.html') + '">Lead Generation</a></li>' +
+            '<li><a href="' + path('services/sales.html') + '">Sales &amp; BD</a></li>' +
+            '<li><a href="' + path('services/growth-strategy.html') + '">Growth Strategy</a></li>' +
+            '<li><a href="' + path('services/financial-advisory.html') + '">Financial Advisory</a></li>' +
+            '<li><a href="' + path('services/operations.html') + '">Operations</a></li>' +
+            '<li><a href="' + path('services/marketing.html') + '">Marketing</a></li>' +
+            '<li><a href="' + path('services/compliance.html') + '">Compliance &amp; Risk</a></li>' +
+            '<li><a href="' + path('services/succession.html') + '">Succession</a></li>' +
           '</ul></div>' +
           '<div class="foot-col"><h5>Industries</h5><ul>' +
-            '<li><a href="' + path('services') + '">Financial Services</a></li>' +
-            '<li><a href="' + path('services') + '">Manufacturing</a></li>' +
-            '<li><a href="' + path('services') + '">Real Estate</a></li>' +
-            '<li><a href="' + path('services') + '">Technology</a></li>' +
-            '<li><a href="' + path('services') + '">Healthcare</a></li>' +
-            '<li><a href="' + path('services') + '">Retail</a></li>' +
-            '<li><a href="' + path('services') + '">Education</a></li>' +
-            '<li><a href="' + path('services') + '">Logistics</a></li>' +
+            '<li><a href="' + path('services.html') + '">Financial Services</a></li>' +
+            '<li><a href="' + path('services.html') + '">Manufacturing</a></li>' +
+            '<li><a href="' + path('services.html') + '">Real Estate</a></li>' +
+            '<li><a href="' + path('services.html') + '">Technology</a></li>' +
+            '<li><a href="' + path('services.html') + '">Healthcare</a></li>' +
+            '<li><a href="' + path('services.html') + '">Retail</a></li>' +
+            '<li><a href="' + path('services.html') + '">Education</a></li>' +
+            '<li><a href="' + path('services.html') + '">Logistics</a></li>' +
           '</ul></div>' +
           '<div class="foot-col"><h5>Company</h5><ul>' +
-            '<li><a href="' + path('about') + '">About</a></li>' +
+            '<li><a href="' + path('about.html') + '">About</a></li>' +
             '<li><a href="' + path('') + '#approach">How we work</a></li>' +
-            '<li><a href="' + path('services') + '">Services</a></li>' +
-            '<li><a href="' + path('work') + '">Work</a></li>' +
-            '<li><a href="' + path('contact') + '">Contact</a></li>' +
+            '<li><a href="' + path('services.html') + '">Services</a></li>' +
+            '<li><a href="' + path('work.html') + '">Work</a></li>' +
+            '<li><a href="' + path('contact.html') + '">Contact</a></li>' +
           '</ul></div>' +
           '<div class="foot-col"><h5>Legal</h5><ul>' +
-            '<li><a href="' + path('legal/privacy') + '">Privacy Policy</a></li>' +
-            '<li><a href="' + path('legal/terms') + '">Terms of Use</a></li>' +
-            '<li><a href="' + path('legal/cookies') + '">Cookies</a></li>' +
+            '<li><a href="' + path('legal/privacy.html') + '">Privacy Policy</a></li>' +
+            '<li><a href="' + path('legal/terms.html') + '">Terms of Use</a></li>' +
+            '<li><a href="' + path('legal/cookies.html') + '">Cookies</a></li>' +
           '</ul></div>' +
         '</div>' +
         '<div class="foot-bottom">' +
@@ -118,10 +118,10 @@
       '</div>' +
       '<div class="mobile-nav-body">' +
         '<a href="' + path('') + '"><span class="n">01</span><span>Home</span><span class="arrow">→</span></a>' +
-        '<a href="' + path('about') + '"><span class="n">02</span><span>About</span><span class="arrow">→</span></a>' +
-        '<a href="' + path('services') + '"><span class="n">03</span><span>Services</span><span class="arrow">→</span></a>' +
-        '<a href="' + path('work') + '"><span class="n">04</span><span>Work</span><span class="arrow">→</span></a>' +
-        '<a href="' + path('contact') + '"><span class="n">05</span><span>Contact</span><span class="arrow">→</span></a>' +
+        '<a href="' + path('about.html') + '"><span class="n">02</span><span>About</span><span class="arrow">→</span></a>' +
+        '<a href="' + path('services.html') + '"><span class="n">03</span><span>Services</span><span class="arrow">→</span></a>' +
+        '<a href="' + path('work.html') + '"><span class="n">04</span><span>Work</span><span class="arrow">→</span></a>' +
+        '<a href="' + path('contact.html') + '"><span class="n">05</span><span>Contact</span><span class="arrow">→</span></a>' +
       '</div>' +
       '<div class="mobile-nav-foot">' +
         '<a href="https://calendly.com/apxe-consultants" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%">Book a discovery call</a>' +
