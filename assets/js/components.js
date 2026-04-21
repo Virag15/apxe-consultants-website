@@ -57,7 +57,7 @@
               '<span>Apxe</span>' +
             '</a>' +
             '<p>Business advisory built around your <span class="accent">growth.</span></p>' +
-            '<div class="locations">Nashik · Mumbai · India</div>' +
+            '<div class="locations">Ahmedabad, Gujarat, India</div>' +
           '</div>' +
           '<div class="foot-col"><h5>Services</h5><ul>' +
             '<li><a href="' + path('services/lead-generation') + '">Lead Generation</a></li>' +
