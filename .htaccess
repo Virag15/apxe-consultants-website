@@ -1,69 +1,69 @@
 # ============================================================
-#  APXE CONSULTANTS, Apache configuration
-#  (Only active on Apache hosting, ignored by Vercel/Netlify.)
+#  APXE CONSULTANTS — Apache/LiteSpeed config (Hostinger)
 # ============================================================
 
-RewriteEngine On
+Options +FollowSymLinks -MultiViews
+DirectoryIndex index.html
 
-# ------------------------------------------------------------
-#  Force HTTPS
-# ------------------------------------------------------------
-RewriteCond %{HTTPS} off
-RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
 
-# ------------------------------------------------------------
-#  Remove trailing slash (except for actual directories)
-# ------------------------------------------------------------
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} (.+)/$
-RewriteRule ^ %1 [L,R=301]
+  # ----------------------------------------------------------
+  #  Force HTTPS
+  # ----------------------------------------------------------
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# ------------------------------------------------------------
-#  Redirect /anything.html to /anything (clean URLs)
-# ------------------------------------------------------------
-RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
-RewriteRule ^ /%1 [R=301,L,NE]
+  # ----------------------------------------------------------
+  #  Redirect /xyz.html to /xyz (clean URLs, SEO)
+  # ----------------------------------------------------------
+  RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L,NE]
 
-# ------------------------------------------------------------
-#  Internally serve /anything as /anything.html
-# ------------------------------------------------------------
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.+?)/?$ $1.html [L]
+  # ----------------------------------------------------------
+  #  Remove trailing slash for non-directory URLs
+  # ----------------------------------------------------------
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} ^(.+)/$
+  RewriteRule ^ %1 [L,R=301]
 
-# ------------------------------------------------------------
-#  Legacy URL redirects (old pages to new)
-# ------------------------------------------------------------
-Redirect 301 /insights /work
-Redirect 301 /how-we-work /#approach
-Redirect 301 /industries /services
-Redirect 301 /index2 /
-Redirect 301 /test /
+  # ----------------------------------------------------------
+  #  Internally rewrite /xyz to /xyz.html
+  # ----------------------------------------------------------
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
 
-# ------------------------------------------------------------
-#  Custom 404
-# ------------------------------------------------------------
-ErrorDocument 404 /404.html
+  # ----------------------------------------------------------
+  #  Legacy URL redirects
+  # ----------------------------------------------------------
+  RewriteRule ^insights/?$ /work [R=301,L]
+  RewriteRule ^insights/(.+)$ /work/$1 [R=301,L]
+  RewriteRule ^how-we-work/?$ /#approach [R=301,L]
+  RewriteRule ^industries/?$ /services [R=301,L]
+  RewriteRule ^index2/?$ / [R=301,L]
+  RewriteRule ^test/?$ / [R=301,L]
+</IfModule>
 
-# ------------------------------------------------------------
+# ============================================================
 #  Security headers
-# ------------------------------------------------------------
+# ============================================================
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-  # Remove server signature
   Header unset X-Powered-By
   Header unset Server
 </IfModule>
 
-# ------------------------------------------------------------
-#  Caching, long for assets, short for HTML
-# ------------------------------------------------------------
+# ============================================================
+#  Caching
+# ============================================================
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresDefault "access plus 1 hour"
@@ -89,23 +89,26 @@ ErrorDocument 404 /404.html
   </FilesMatch>
 </IfModule>
 
-# ------------------------------------------------------------
+# ============================================================
 #  Gzip / Brotli compression
-# ------------------------------------------------------------
+# ============================================================
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
   AddOutputFilterByType DEFLATE application/javascript application/json application/xml
   AddOutputFilterByType DEFLATE image/svg+xml font/woff font/woff2
 </IfModule>
 
-# ------------------------------------------------------------
-#  Disable directory browsing
-# ------------------------------------------------------------
+# ============================================================
+#  Disable directory browsing & block sensitive files
+# ============================================================
 Options -Indexes
 
-# ------------------------------------------------------------
-#  Prevent access to hidden and sensitive files
-# ------------------------------------------------------------
-<FilesMatch "^\.|\.(env|log|sql|bak|md|sh)$">
+<FilesMatch "^\.">
   Require all denied
 </FilesMatch>
+
+<FilesMatch "\.(env|log|sql|bak|md|sh|ini|conf)$">
+  Require all denied
+</FilesMatch>
+
+ErrorDocument 404 /404.html
