@@ -1,397 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services — Apxe Consultants</title>
-  <meta name="description" content="Eight areas of advisory. One firm. Everything connected.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: '#D04A02',
-            branddk: '#B33D00',
-            brandlt: '#E8DDD4',
-            brandbg: '#FFF5EE',
-            dark: '#2D2D2D',
-            dark2: '#1A1A1A',
-            txt: '#333333',
-            sub: '#6D6D6D',
-            lite: '#F5F5F3',
-            line: '#E0E0E0',
-          }
-        }
-      }
-    }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{font-family:'Figtree',sans-serif;color:#333;background:#fff;overflow-x:hidden}
-    h1,h2,h3,h4,h5,h6,.hd{font-family:'Bricolage Grotesque',sans-serif}
-    .r{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
-    .r.v{opacity:1;transform:translateY(0)}
-    .d1{transition-delay:.06s}.d2{transition-delay:.12s}.d3{transition-delay:.18s}
-    .d4{transition-delay:.24s}.d5{transition-delay:.3s}.d6{transition-delay:.36s}
-    .d7{transition-delay:.42s}.d8{transition-delay:.48s}
-    .nav-s{background:rgba(255,255,255,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #E0E0E0}
-    .btn-b{background:#D04A02;color:#fff;transition:all .2s ease}
-    .btn-b:hover{background:#B33D00;transform:translateY(-1px)}
-    .btn-o{border:1.5px solid #2D2D2D;color:#2D2D2D;transition:all .2s ease}
-    .btn-o:hover{border-color:#D04A02;color:#D04A02}
-    .btn-w{border:1.5px solid rgba(255,255,255,.3);color:#fff;transition:all .2s ease}
-    .btn-w:hover{border-color:#fff;background:#fff;color:#D04A02}
-    .link-h{position:relative}
-    .link-h::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:#D04A02;transition:width .25s ease}
-    .link-h:hover::after{width:100%}
-    .mob-overlay{position:fixed;inset:0;z-index:60;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s ease}
-    .mob-overlay.open{opacity:1;pointer-events:all}
-    .mob-overlay a{opacity:0;transform:translateY(16px);transition:opacity .3s ease,transform .3s ease}
-    .mob-overlay.open a{opacity:1;transform:translateY(0)}
-    .mob-overlay.open a:nth-child(1){transition-delay:.05s}
-    .mob-overlay.open a:nth-child(2){transition-delay:.1s}
-    .mob-overlay.open a:nth-child(3){transition-delay:.15s}
-    .mob-overlay.open a:nth-child(4){transition-delay:.2s}
-    .mob-overlay.open a:nth-child(5){transition-delay:.25s}
-    .mob-overlay.open a:nth-child(6){transition-delay:.3s}
-    .mob-overlay.open a:nth-child(7){transition-delay:.35s}
-    .mob-overlay.open a:nth-child(8){transition-delay:.4s}
-    ::-webkit-scrollbar{width:4px}
-    ::-webkit-scrollbar-track{background:#fff}
-    ::-webkit-scrollbar-thumb{background:#E0E0E0;border-radius:2px}
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="description" content="Apxe Consultants Services, Lead generation, sales, growth strategy, financial advisory, operations, marketing, compliance, and succession planning." />
+<title>Services, Apxe Consultants</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+<link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
 
-  <nav id="nav" class="fixed top-0 w-full z-50 transition-all duration-300">
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 h-[68px] flex items-center justify-between">
-      <a href="index.html" class="hd text-lg font-bold tracking-tight text-dark2 relative z-[70]">Apxe<span class="text-brand">.</span></a>
-      <div class="hidden lg:flex items-center gap-10">
-        <a href="index.html" class="link-h text-[13px] font-medium text-sub">Home</a>
-<a href="about.html" class="link-h text-[13px] font-medium text-sub">About</a>
-<a href="services.html" class="link-h text-[13px] font-medium text-dark">Services</a>
-<a href="how-we-work.html" class="link-h text-[13px] font-medium text-sub">How We Work</a>
-<a href="industries.html" class="link-h text-[13px] font-medium text-sub">Industries</a>
-<a href="insights.html" class="link-h text-[13px] font-medium text-sub">Insights</a>
-<a href="contact.html" class="link-h text-[13px] font-medium text-sub">Contact</a>
+<!-- ============= SVG ICON DEFINITIONS ============= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="icon-arrow-ne" viewBox="0 0 12 12">
+      <path d="M3 9 L9 3 M4 3 L9 3 L9 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 14 14">
+      <rect x="1" y="5" width="2.5" height="8" fill="currentColor"/>
+      <circle cx="2.25" cy="2.5" r="1.25" fill="currentColor"/>
+      <path d="M5 5 L7.5 5 L7.5 6.2 Q 8.3 4.7 10.2 4.8 Q 13 4.9 13 8.2 L13 13 L10.5 13 L10.5 8.8 Q 10.5 7.3 9.3 7.3 Q 7.5 7.3 7.5 9 L7.5 13 L5 13 Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-x" viewBox="0 0 14 14">
+      <path d="M2 2 L12 12 M12 2 L2 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-mail" viewBox="0 0 14 14">
+      <rect x="1.5" y="3" width="11" height="8" rx="1" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <path d="M1.5 4 L7 8 L12.5 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    </symbol>
 
+    <symbol id="cap-lead" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M12 3 L12 6 M12 18 L12 21 M3 12 L6 12 M18 12 L21 12 M5.5 5.5 L7.5 7.5 M16.5 16.5 L18.5 18.5 M18.5 5.5 L16.5 7.5 M7.5 16.5 L5.5 18.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="cap-sales" viewBox="0 0 24 24">
+      <path d="M4 6 L20 6 L14 14 L14 20 L10 20 L10 14 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="cap-growth" viewBox="0 0 24 24">
+      <rect x="9" y="9" width="6" height="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <rect x="5" y="5" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+      <rect x="2" y="2" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.28"/>
+    </symbol>
+    <symbol id="cap-finance" viewBox="0 0 24 24">
+      <path d="M3 21 L21 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <rect x="4" y="14" width="3.5" height="7" fill="currentColor"/>
+      <rect x="10.25" y="9" width="3.5" height="12" fill="currentColor" opacity="0.7"/>
+      <rect x="16.5" y="4" width="3.5" height="17" fill="currentColor" opacity="0.4"/>
+    </symbol>
+    <symbol id="cap-ops" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="3" fill="currentColor"/>
+      <circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M12 3 L12 5 M12 19 L12 21 M3 12 L5 12 M19 12 L21 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="cap-marketing" viewBox="0 0 24 24">
+      <circle cx="9" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="15" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="cap-compliance" viewBox="0 0 24 24">
+      <path d="M12 3 L20 7 L20 13 Q 20 18 12 21 Q 4 18 4 13 L 4 7 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M8 12 L11 15 L16 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </symbol>
+    <symbol id="cap-succession" viewBox="0 0 24 24">
+      <circle cx="5" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="12" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="19" cy="12" r="2" fill="currentColor"/>
+      <path d="M7 12 L10 12 M14 12 L17 12" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+  </defs>
+</svg>
+
+
+<!-- NAV (injected by components.js) -->
+<div data-nav></div>
+
+
+<!-- ============= PAGE HEAD ============= -->
+<section class="page-head">
+  <div class="container">
+    <div class="page-head-inner">
+      <div class="page-head-main">
+        <div class="kicker">Services</div>
+        <h1>Eight capabilities. <span class="accent">One partner.</span></h1>
+        <p>We don&rsquo;t specialise in one thing and hand you off for the rest. The engagements that move a business forward are usually the ones that work across areas, pipeline, operations, finance, and governance together.</p>
       </div>
-      <a href="contact.html" class="hidden lg:inline-flex btn-b px-6 py-2.5 rounded text-[13px] font-semibold">Book a free call</a>
-      <button id="mBtn" class="lg:hidden p-2 relative z-[70]" aria-label="Menu">
-        <svg id="menuIcon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 7h18M3 12h14M3 17h18" stroke="#2D2D2D" stroke-width="1.5" stroke-linecap="round"/></svg>
-        <svg id="closeIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" class="hidden"><path d="M6 6l12 12M18 6L6 18" stroke="#2D2D2D" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </button>
+
+      <aside class="quick-card">
+        <span class="badge">Not sure where to start?</span>
+        <p style="font-size:15px; line-height:1.55; color:var(--ink-soft); max-width:34ch;">
+          Most engagements begin with a diagnosis of what&rsquo;s actually slowing the business down. A 30-minute call is usually enough to tell.
+        </p>
+        <a href="https://calendly.com/apxe-consultants" target="_blank" rel="noopener" class="btn btn-primary">
+          Book a discovery call
+        </a>
+      </aside>
     </div>
-  </nav>
-
-  <div id="mobOverlay" class="mob-overlay">
-    <a href="index.html" class="hd text-2xl font-medium text-sub" onclick="cM()">Home</a>
-<a href="about.html" class="hd text-2xl font-medium text-sub" onclick="cM()">About</a>
-<a href="services.html" class="hd text-2xl font-bold text-dark2" onclick="cM()">Services</a>
-<a href="how-we-work.html" class="hd text-2xl font-medium text-sub" onclick="cM()">How We Work</a>
-<a href="industries.html" class="hd text-2xl font-medium text-sub" onclick="cM()">Industries</a>
-<a href="insights.html" class="hd text-2xl font-medium text-sub" onclick="cM()">Insights</a>
-<a href="contact.html" class="hd text-2xl font-medium text-sub" onclick="cM()">Contact</a>
-
-    <a href="contact.html" class="btn-b px-8 py-3.5 rounded text-sm font-semibold mt-8" onclick="cM()">Book a free call</a>
   </div>
+</section>
 
-  <section class="pt-[68px] bg-white">
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-16 lg:py-24">
-      <div class="max-w-[700px]">
-        <div class="r w-12 h-[3px] bg-brand mb-8"></div>
-        <p class="r d1 text-[10px] font-semibold tracking-[0.2em] uppercase text-brand mb-4">Services</p>
-        <h1 class="r d2 hd text-[clamp(2rem,4.5vw,3.25rem)] font-extrabold leading-[1.1] tracking-tight text-dark2 mb-6">Eight areas of advisory. One firm. Everything connected.</h1>
-        <p class='r d3 text-[17px] text-sub leading-[1.75] max-w-[600px]'>Every service Apxe offers is part of the same thinking about what makes a business work well. When you work with us, you get advisors who can see the full picture — and advise accordingly.</p>
+
+<!-- ============= THESIS / MANIFESTO ============= -->
+<section class="thesis">
+  <div class="container">
+    <span class="thesis-eyebrow reveal">Our conviction</span>
+    <h2 class="reveal">Most advisory firms are <span class="accent">single-tool merchants.</span> We aren&rsquo;t.</h2>
+
+    <div class="thesis-points">
+      <div class="thesis-point reveal">
+        <span class="tp-mark">01 / Breadth</span>
+        <h3>Most business problems don&rsquo;t live in one box.</h3>
+        <p>A stalled pipeline is almost never just a sales problem. It&rsquo;s pricing, positioning, the wrong hire, or an ops bottleneck that kills deals in week three. Single-service firms are built to see one of those. We&rsquo;re built to see all five.</p>
+      </div>
+      <div class="thesis-point reveal" data-delay="1">
+        <span class="tp-mark">02 / Depth</span>
+        <h3>Breadth only works if the depth is real.</h3>
+        <p>We&rsquo;re not generalists who know a little about a lot. Each capability is run by a senior operator who has built or fixed exactly that function inside a real business, not just written decks about it.</p>
+      </div>
+      <div class="thesis-point reveal" data-delay="2">
+        <span class="tp-mark">03 / Continuity</span>
+        <h3>We stay until the work is running.</h3>
+        <p>No PDF handoff, no &ldquo;implementation is out of scope.&rdquo; The engagement ends when your team owns what we built together and the numbers have moved, not when the deck is approved.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="bg-white" id="growth">
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-16 lg:py-20">
-      <div class="r grid lg:grid-cols-[auto,1fr] gap-8 lg:gap-16 items-start">
-        <div class="w-16 h-16 rounded-2xl bg-brandbg flex items-center justify-center shrink-0">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <div>
-          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-brand mb-2">Growth</p>
-          <h2 class="hd text-xl lg:text-2xl font-bold text-dark2 mb-4">Lead Generation & Demand Creation</h2>
-          <p class="text-[15px] text-sub leading-relaxed mb-6 max-w-[680px]">Most B2B businesses grow through referrals until they don't. The problem isn't the product — it's that there's no reliable system for finding new clients. Apxe builds that system from scratch.</p>
-          <div class="bg-brandbg rounded-xl p-5 mb-4">
-            <p class="text-[11px] font-semibold tracking-[0.1em] uppercase text-brand mb-2">What's included</p>
-            <p class="text-[13px] text-sub leading-relaxed">ICP and target market definition · Outbound engine design · Inbound strategy and content framework · LinkedIn-based prospecting · Funnel architecture · Lead scoring and qualification · CRM configuration</p>
-          </div>
-          <div class="flex items-start gap-3">
-            <div class="w-6 h-6 rounded-full bg-brand/10 flex items-center justify-center shrink-0 mt-0.5">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-            <p class="text-[14px] text-dark font-medium leading-relaxed"><span class="text-brand font-semibold">Outcome:</span> A steady, measurable flow of qualified prospects reaching your sales team each month.</p>
-          </div>
-        </div>
-      </div>
+
+<!-- ============= SERVICE ROWS with STICKY CTA ============= -->
+<section class="service-detail-list">
+  <div class="container">
+    <div class="service-detail-head reveal">
+      <div class="kicker">Explore each capability</div>
+      <h2>Every service, <span class="accent">in detail.</span></h2>
+      <p>Tap any service below to see the full scope, what we solve, how we work, what you get, and who it&rsquo;s built for.</p>
     </div>
-  </section>
 
-  <section class="bg-lite" id="revenue">
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-16 lg:py-20">
-      <div class="r grid lg:grid-cols-[auto,1fr] gap-8 lg:gap-16 items-start">
-        <div class="w-16 h-16 rounded-2xl bg-brandbg flex items-center justify-center shrink-0">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="1.5"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
-        </div>
-        <div>
-          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-brand mb-2">Revenue</p>
-          <h2 class="hd text-xl lg:text-2xl font-bold text-dark2 mb-4">Sales & Business Development</h2>
-          <p class="text-[15px] text-sub leading-relaxed mb-6 max-w-[680px]">Generating leads is only half the job. Apxe designs the full sales architecture — how deals move through your pipeline, how your team handles objections, how you price, propose, and close.</p>
-          <div class="bg-brandbg rounded-xl p-5 mb-4">
-            <p class="text-[11px] font-semibold tracking-[0.1em] uppercase text-brand mb-2">What's included</p>
-            <p class="text-[13px] text-sub leading-relaxed">End-to-end sales process design · Pipeline structure · CRM setup · Lead-to-deal conversion strategy · BD team playbooks and training · Pricing frameworks · Key account management</p>
-          </div>
-          <div class="flex items-start gap-3">
-            <div class="w-6 h-6 rounded-full bg-brand/10 flex items-center justify-center shrink-0 mt-0.5">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-            <p class="text-[14px] text-dark font-medium leading-relaxed"><span class="text-brand font-semibold">Outcome:</span> A sales team that operates with discipline and consistency — where closing is a process, not a personality.</p>
-          </div>
-        </div>
+    <div class="service-detail-layout">
+      <div class="service-rows">
+        <a href="services/lead-generation.html" class="service-row reveal">
+          <span class="service-row-num">01</span>
+          <span class="service-row-icon"><svg><use href="#cap-lead"/></svg></span>
+          <span class="service-row-name">Lead Generation &amp; Demand Creation</span>
+          <span class="service-row-desc">Stop relying on who you know. Build a repeatable system that brings the right people to your door.</span>
+          <span class="service-row-arrow"><svg><use href="#icon-arrow-ne"/></svg></span>
+        </a>
+        <a href="services/sales.html" class="service-row reveal">
+          <span class="service-row-num">02</span>
+          <span class="service-row-icon"><svg><use href="#cap-sales"/></svg></span>
+          <span class="service-row-name">Sales &amp; Business Development</span>
+          <span class="service-row-desc">A pipeline is only valuable when it converts. We build the process, training, and tooling that close the gap.</span>
+          <span class="service-row-arrow"><svg><use href="#icon-arrow-ne"/></svg></span>
+        </a>
+        <a href="services/growth-strategy.html" class="service-row reveal">
+          <span class="service-row-num">03</span>
+          <span class="service-row-icon"><svg><use href="#cap-growth"/></svg></span>
+          <span class="service-row-name">Growth Strategy &amp; Market Expansion</span>
+          <span class="service-row-desc">New region, new product line, or new segment. We design the entry plan and commercial infrastructure to run it.</span>
+          <span class="service-row-arrow"><svg><use href="#icon-arrow-ne"/></svg></span>
+        </a>
+        <a href="services/financial-advisory.html" class="service-row reveal">
+          <span class="service-row-num">04</span>
+          <span class="service-row-icon"><svg><use href="#cap-finance"/></svg></span>
+          <span class="service-row-name">Financial Advisory</span>
+          <span class="service-row-desc">Numbers tell a story. We help you read it clearly, plan capital sensibly, and decide with confidence.</span>
+          <span class="service-row-arrow"><svg><use href="#icon-arrow-ne"/></svg></span>
+        </a>
+        <a href="services/operations.html" class="service-row reveal">
+          <span class="service-row-num">05</span>
+          <span class="service-row-icon"><svg><use href="#cap-ops"/></svg></span>
+          <span class="service-row-name">Operational Efficiency</span>
+          <span class="service-row-desc">When the engine runs better, everything else gets easier. Find the leaks, remove the friction, protect the margin.</span>
+          <span class="service-row-arrow"><svg><use href="#icon-arrow-ne"/></svg></span>
+        </a>
+        <a href="services/marketing.html" class="service-row reveal">
+          <span class="service-row-num">06</span>
+          <span class="service-row-icon"><svg><use href="#cap-marketing"/></svg></span>
+          <span class="service-row-name">Marketing &amp; Sales Advisory</span>
+          <span class="service-row-desc">Brand positioning through to CRM. Marketing that earns its seat at the revenue conversation, not the cost one.</span>
+          <span class="service-row-arrow"><svg><use href="#icon-arrow-ne"/></svg></span>
+        </a>
+        <a href="services/compliance.html" class="service-row reveal">
+          <span class="service-row-num">07</span>
+          <span class="service-row-icon"><svg><use href="#cap-compliance"/></svg></span>
+          <span class="service-row-name">Compliance &amp; Risk Management</span>
+          <span class="service-row-desc">Growth without governance is risky. Protected, compliant, and structured for the long run.</span>
+          <span class="service-row-arrow"><svg><use href="#icon-arrow-ne"/></svg></span>
+        </a>
+        <a href="services/succession.html" class="service-row reveal">
+          <span class="service-row-num">08</span>
+          <span class="service-row-icon"><svg><use href="#cap-succession"/></svg></span>
+          <span class="service-row-name">Succession &amp; Exit Planning</span>
+          <span class="service-row-desc">Passing the baton, bringing in a partner, or planning an exit. Prepare the business before the pressure is on.</span>
+          <span class="service-row-arrow"><svg><use href="#icon-arrow-ne"/></svg></span>
+        </a>
       </div>
-    </div>
-  </section>
 
-  <section class="bg-white" id="expansion">
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-16 lg:py-20">
-      <div class="r grid lg:grid-cols-[auto,1fr] gap-8 lg:gap-16 items-start">
-        <div class="w-16 h-16 rounded-2xl bg-brandbg flex items-center justify-center shrink-0">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="1.5"><path d="M21 12a9 9 0 1 1-6.22-8.56"/><path d="M22 2 13.5 10.5"/><path d="M16 2h6v6"/></svg>
+      <aside class="service-detail-sticky">
+        <div class="sticky-count">
+          <span class="big-num">08<span class="accent">.</span></span>
+          <span class="kicker">Capabilities</span>
+          <span class="label">Eight focused services, run by one senior team. Pick one, or let us shape an engagement across several.</span>
         </div>
-        <div>
-          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-brand mb-2">Expansion</p>
-          <h2 class="hd text-xl lg:text-2xl font-bold text-dark2 mb-4">Growth Strategy & Market Expansion</h2>
-          <p class="text-[15px] text-sub leading-relaxed mb-6 max-w-[680px]">There's a difference between growing quickly and growing well. Apxe works with businesses that want both — designing go-to-market strategies grounded in real market data.</p>
-          <div class="bg-brandbg rounded-xl p-5 mb-4">
-            <p class="text-[11px] font-semibold tracking-[0.1em] uppercase text-brand mb-2">What's included</p>
-            <p class="text-[13px] text-sub leading-relaxed">Go-to-market strategy · New market entry (domestic & international) · Channel partnership strategy · Pricing and positioning · Revenue scaling frameworks · Competitive mapping · Business model refinement</p>
-          </div>
-          <div class="flex items-start gap-3">
-            <div class="w-6 h-6 rounded-full bg-brand/10 flex items-center justify-center shrink-0 mt-0.5">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-            <p class="text-[14px] text-dark font-medium leading-relaxed"><span class="text-brand font-semibold">Outcome:</span> A clear, tested path to your next revenue milestone — with the strategy and commercial intelligence to walk it.</p>
-          </div>
+        <div class="sticky-cta">
+          <span class="kicker">30-min call</span>
+          <h3>Not sure which one fits?</h3>
+          <p>Book a discovery call. We&rsquo;ll listen first, then point you at the right starting service, honestly.</p>
+          <a href="https://calendly.com/apxe-consultants" target="_blank" rel="noopener" class="btn btn-primary">Book a call</a>
         </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============= BIG CLAIM ============= -->
+<section class="big-claim">
+  <div class="container">
+    <span class="eyebrow reveal">The operating principle</span>
+    <h2 class="reveal">
+      <span class="line">One relationship.</span>
+      <span class="line"><span class="accent">Eight</span> capabilities.</span>
+      <span class="line">Zero handoffs.</span>
+    </h2>
+    <p class="sub reveal">The person you meet in the first call is the person accountable in the last one. Not a partner selling, then juniors delivering.</p>
+  </div>
+</section>
+
+
+<!-- ============= WHAT WE DON'T DO ============= -->
+<section class="dont-section">
+  <div class="container">
+    <div class="dont-inner">
+      <div class="dont-side reveal">
+        <div class="kicker">What we won&rsquo;t do</div>
+        <h2>The engagements we <span class="accent">turn down.</span></h2>
+        <p>We&rsquo;re better at saying no than most advisory firms. Here&rsquo;s the work we won&rsquo;t take, and why.</p>
       </div>
-    </div>
-  </section>
 
-  <section class="bg-lite" id="finance">
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-16 lg:py-20">
-      <div class="r grid lg:grid-cols-[auto,1fr] gap-8 lg:gap-16 items-start">
-        <div class="w-16 h-16 rounded-2xl bg-brandbg flex items-center justify-center shrink-0">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="1.5"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        </div>
-        <div>
-          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-brand mb-2">Finance</p>
-          <h2 class="hd text-xl lg:text-2xl font-bold text-dark2 mb-4">Financial Advisory</h2>
-          <p class="text-[15px] text-sub leading-relaxed mb-6 max-w-[680px]">Good financial decision-making requires clarity that most growing businesses don't have. Apxe gives you that clarity — on cash position, investment returns, and business valuation.</p>
-          <div class="bg-brandbg rounded-xl p-5 mb-4">
-            <p class="text-[11px] font-semibold tracking-[0.1em] uppercase text-brand mb-2">What's included</p>
-            <p class="text-[13px] text-sub leading-relaxed">Financial planning and analysis · Cash flow management · Investment strategy advisory · M&A advisory · Financial structuring · Business valuation</p>
-          </div>
-          <div class="flex items-start gap-3">
-            <div class="w-6 h-6 rounded-full bg-brand/10 flex items-center justify-center shrink-0 mt-0.5">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-            <p class="text-[14px] text-dark font-medium leading-relaxed"><span class="text-brand font-semibold">Outcome:</span> The financial visibility to make decisions confidently — without being caught off guard.</p>
+      <div class="dont-list">
+        <div class="dont-item reveal">
+          <span class="no-mark" aria-hidden="true"></span>
+          <div>
+            <h4>We don&rsquo;t do 10-person steering committees.</h4>
+            <p>If the decision needs ten people to sign off, the decision won&rsquo;t happen. We work with one or two accountable owners, or we don&rsquo;t start.</p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-white" id="operations">
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-16 lg:py-20">
-      <div class="r grid lg:grid-cols-[auto,1fr] gap-8 lg:gap-16 items-start">
-        <div class="w-16 h-16 rounded-2xl bg-brandbg flex items-center justify-center shrink-0">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-        </div>
-        <div>
-          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-brand mb-2">Operations</p>
-          <h2 class="hd text-xl lg:text-2xl font-bold text-dark2 mb-4">Operational Efficiency</h2>
-          <p class="text-[15px] text-sub leading-relaxed mb-6 max-w-[680px]">As businesses grow, the processes that got them here often become the things holding them back. Apxe identifies where your operations are creating drag and redesigns them.</p>
-          <div class="bg-brandbg rounded-xl p-5 mb-4">
-            <p class="text-[11px] font-semibold tracking-[0.1em] uppercase text-brand mb-2">What's included</p>
-            <p class="text-[13px] text-sub leading-relaxed">Process audit and redesign · Supply chain advisory · Resource allocation strategy · Cost reduction frameworks · Lean management · Operational KPI design</p>
-          </div>
-          <div class="flex items-start gap-3">
-            <div class="w-6 h-6 rounded-full bg-brand/10 flex items-center justify-center shrink-0 mt-0.5">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-            <p class="text-[14px] text-dark font-medium leading-relaxed"><span class="text-brand font-semibold">Outcome:</span> An operation that runs more smoothly at lower cost — freeing up capacity for growth.</p>
+        <div class="dont-item reveal">
+          <span class="no-mark" aria-hidden="true"></span>
+          <div>
+            <h4>We don&rsquo;t hand over a deck and leave.</h4>
+            <p>Advisory that ends at the recommendation is a report, not a result. If we can&rsquo;t stay through implementation, it&rsquo;s not the right engagement for us.</p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-lite" id="marketing">
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-16 lg:py-20">
-      <div class="r grid lg:grid-cols-[auto,1fr] gap-8 lg:gap-16 items-start">
-        <div class="w-16 h-16 rounded-2xl bg-brandbg flex items-center justify-center shrink-0">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        </div>
-        <div>
-          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-brand mb-2">Marketing</p>
-          <h2 class="hd text-xl lg:text-2xl font-bold text-dark2 mb-4">Marketing & Sales Advisory</h2>
-          <p class="text-[15px] text-sub leading-relaxed mb-6 max-w-[680px]">Marketing that isn't connected to revenue is a cost centre. Apxe helps businesses build a brand that the market respects and a pipeline that marketing actually contributes to.</p>
-          <div class="bg-brandbg rounded-xl p-5 mb-4">
-            <p class="text-[11px] font-semibold tracking-[0.1em] uppercase text-brand mb-2">What's included</p>
-            <p class="text-[13px] text-sub leading-relaxed">Market research · Brand positioning · Sales strategy · CRM strategy · Digital marketing approach · Marketing and sales alignment</p>
-          </div>
-          <div class="flex items-start gap-3">
-            <div class="w-6 h-6 rounded-full bg-brand/10 flex items-center justify-center shrink-0 mt-0.5">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-            <p class="text-[14px] text-dark font-medium leading-relaxed"><span class="text-brand font-semibold">Outcome:</span> A brand that earns its position in the market, a digital presence that works, and a pipeline marketing contributes to.</p>
+        <div class="dont-item reveal">
+          <span class="no-mark" aria-hidden="true"></span>
+          <div>
+            <h4>We don&rsquo;t take a brief we don&rsquo;t believe in.</h4>
+            <p>If the problem is misdiagnosed or the outcome is unrealistic, we&rsquo;ll say so in the first call and point you to someone better placed. Fit first, fees second.</p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-white" id="governance">
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-16 lg:py-20">
-      <div class="r grid lg:grid-cols-[auto,1fr] gap-8 lg:gap-16 items-start">
-        <div class="w-16 h-16 rounded-2xl bg-brandbg flex items-center justify-center shrink-0">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <div>
-          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-brand mb-2">Governance</p>
-          <h2 class="hd text-xl lg:text-2xl font-bold text-dark2 mb-4">Compliance & Risk Management</h2>
-          <p class="text-[15px] text-sub leading-relaxed mb-6 max-w-[680px]">The bigger a business gets, the more exposed it becomes. Apxe advises on regulatory compliance, governance frameworks, and risk management before it becomes a crisis.</p>
-          <div class="bg-brandbg rounded-xl p-5 mb-4">
-            <p class="text-[11px] font-semibold tracking-[0.1em] uppercase text-brand mb-2">What's included</p>
-            <p class="text-[13px] text-sub leading-relaxed">Regulatory compliance advisory · Corporate governance frameworks · Risk identification and mitigation · ESG advisory and reporting · Business continuity planning</p>
+        <div class="dont-item reveal">
+          <span class="no-mark" aria-hidden="true"></span>
+          <div>
+            <h4>We don&rsquo;t quote by the hour.</h4>
+            <p>Hourly billing incentivises the wrong thing, taking longer. Every engagement is fixed-fee on scope agreed up front. If we underestimate, that&rsquo;s on us.</p>
           </div>
-          <div class="flex items-start gap-3">
-            <div class="w-6 h-6 rounded-full bg-brand/10 flex items-center justify-center shrink-0 mt-0.5">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-            <p class="text-[14px] text-dark font-medium leading-relaxed"><span class="text-brand font-semibold">Outcome:</span> A business that is governed well, compliant, and protected against the risks that come with scale.</p>
+        </div>
+        <div class="dont-item reveal">
+          <span class="no-mark" aria-hidden="true"></span>
+          <div>
+            <h4>We don&rsquo;t subcontract the thinking.</h4>
+            <p>The senior who scopes the work is the senior who does it. No bait-and-switch to a junior team after the contract is signed.</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="bg-lite" id="legacy">
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-16 lg:py-20">
-      <div class="r grid lg:grid-cols-[auto,1fr] gap-8 lg:gap-16 items-start">
-        <div class="w-16 h-16 rounded-2xl bg-brandbg flex items-center justify-center shrink-0">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-        </div>
-        <div>
-          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-brand mb-2">Legacy</p>
-          <h2 class="hd text-xl lg:text-2xl font-bold text-dark2 mb-4">Succession & Exit Planning</h2>
-          <p class="text-[15px] text-sub leading-relaxed mb-6 max-w-[680px]">Every business owner will eventually hand over or step away. Apxe helps you plan the transition — whether preparing the next generation, identifying an acquirer, or getting exit-ready.</p>
-          <div class="bg-brandbg rounded-xl p-5 mb-4">
-            <p class="text-[11px] font-semibold tracking-[0.1em] uppercase text-brand mb-2">What's included</p>
-            <p class="text-[13px] text-sub leading-relaxed">Business succession planning · Exit strategy development · Business valuation advisory · Family business advisory · Sale and transition planning · Leadership transition support</p>
-          </div>
-          <div class="flex items-start gap-3">
-            <div class="w-6 h-6 rounded-full bg-brand/10 flex items-center justify-center shrink-0 mt-0.5">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D04A02" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-            <p class="text-[14px] text-dark font-medium leading-relaxed"><span class="text-brand font-semibold">Outcome:</span> A transition that happens on your terms — where the value you've built is protected.</p>
+
+<!-- ============= TESTIMONIAL ============= -->
+<section class="testimonial">
+  <div class="container">
+    <div class="testimonial-card reveal">
+      <div class="testimonial-meta">
+        <span class="kicker">Client story</span>
+        <div style="display:flex; align-items:center; gap:14px;">
+          <span class="avatar">RS</span>
+          <div class="who">
+            <span class="name">Rohit S.</span>
+            <span class="role">Founder, B2B SaaS (Pune)</span>
           </div>
         </div>
+      </div>
+      <div class="testimonial-body">
+        <blockquote>&ldquo;Three other firms told us we had a lead problem. Apxe spent two weeks and told us we had a <span class="accent">pricing problem</span>. They were right. We closed more in the following quarter than the previous three combined.&rdquo;</blockquote>
+        <span class="result">Result: <b>2.4&times; pipeline velocity in 90 days</b></span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="bg-brand relative overflow-hidden">
-    <svg class="absolute left-0 top-0 h-full w-full opacity-10" viewBox="0 0 1280 200" fill="none" preserveAspectRatio="none">
-      <circle cx="200" cy="100" r="180" stroke="#fff" stroke-width="1"/>
-      <circle cx="1100" cy="50" r="120" stroke="#fff" stroke-width="1"/>
-    </svg>
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-24 relative z-10">
-      <div class="r flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-        <div class="max-w-[540px]">
-          <h2 class="hd text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold tracking-tight text-white mb-4">Let\u2019s talk about your business.</h2>
-          <p class="text-[15px] text-white/75 leading-relaxed">No agenda, no obligation. Just a straightforward conversation about where things stand.</p>
+
+<!-- ============= CTA BAND ============= -->
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-inner">
+      <h2>Still trying to scope it?</h2>
+      <aside class="cta-aside">
+        <p>That&rsquo;s what the discovery call is for. Thirty minutes, no agenda, we&rsquo;ll tell you honestly where we can help and where we can&rsquo;t.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://calendly.com/apxe-consultants" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book a discovery call</a>
+          <a href="contact.html" class="btn btn-ghost-light btn-lg">Send a message</a>
         </div>
-        <div class="flex flex-wrap gap-4">
-          <a href="contact.html" class="bg-white text-brand px-8 py-4 rounded text-sm font-semibold hover:bg-white/90 transition-all">Book a free call</a>
-          <a href="services.html" class="btn-w px-8 py-4 rounded text-sm font-semibold">Explore services</a>
-        </div>
-      </div>
+      </aside>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer class="bg-dark2 py-16 px-6 lg:px-10">
-    <div class="max-w-[1280px] mx-auto">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-        <div>
-          <a href="index.html" class="hd text-lg font-bold text-white block mb-5">Apxe<span class="text-brand">.</span></a>
-          <p class="text-sm text-white/35 leading-relaxed mb-6">Business advisory built around your growth.</p>
-          <div class="flex gap-5">
-            <a href="#" class="text-white/35 hover:text-brand transition-colors"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg></a>
-            <a href="#" class="text-white/35 hover:text-brand transition-colors"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg></a>
-            <a href="#" class="text-white/35 hover:text-brand transition-colors"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
-          </div>
-        </div>
-        <div>
-          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-white/25 mb-5">Services</p>
-          <div class="flex flex-col gap-3">
-            <a href="services.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Lead Generation</a>
-            <a href="services.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Sales & BD</a>
-            <a href="services.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Growth Strategy</a>
-            <a href="services.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Financial Advisory</a>
-            <a href="services.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Operations</a>
-            <a href="services.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Marketing Advisory</a>
-            <a href="services.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Compliance & Risk</a>
-            <a href="services.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Succession Planning</a>
-          </div>
-        </div>
-        <div>
-          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-white/25 mb-5">Company</p>
-          <div class="flex flex-col gap-3">
-            <a href="about.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">About</a>
-            <a href="how-we-work.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">How We Work</a>
-            <a href="industries.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Industries</a>
-            <a href="insights.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Insights</a>
-            <a href="contact.html" class="text-[13px] text-white/45 hover:text-brand transition-colors">Contact</a>
-          </div>
-        </div>
-        <div>
-          <p class="text-[10px] font-semibold tracking-[0.15em] uppercase text-white/25 mb-5">Legal</p>
-          <div class="flex flex-col gap-3 mb-6">
-            <a href="#" class="text-[13px] text-white/45 hover:text-brand transition-colors">Privacy Policy</a>
-            <a href="#" class="text-[13px] text-white/45 hover:text-brand transition-colors">Terms of Use</a>
-          </div>
-          <p class="text-[11px] text-white/25 leading-relaxed">Content on this website is for general informational purposes only and does not constitute legal, financial, or regulatory advice.</p>
-        </div>
-      </div>
-      <div class="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-        <p class="text-[12px] text-white/25">&copy; 2025 Apxe Consultants. All rights reserved.</p>
-        <p class="text-[12px] text-white/25">Advisory & Consultancy &middot; India</p>
-      </div>
-    </div>
-  </footer>
 
-  <script>
-    const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');io.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-    document.querySelectorAll('.r').forEach(el=>io.observe(el));
-    const navEl=document.getElementById('nav');let t=false;
-    window.addEventListener('scroll',()=>{if(!t){requestAnimationFrame(()=>{navEl.classList.toggle('nav-s',scrollY>24);t=false});t=true}},{passive:true});
-    const mob=document.getElementById('mobOverlay'),mi=document.getElementById('menuIcon'),ci=document.getElementById('closeIcon');
-    let isOpen=false;
-    function oM(){mob.classList.add('open');mi.classList.add('hidden');ci.classList.remove('hidden');document.body.style.overflow='hidden';isOpen=true}
-    function cM(){mob.classList.remove('open');mi.classList.remove('hidden');ci.classList.add('hidden');document.body.style.overflow='';isOpen=false}
-    document.getElementById('mBtn').addEventListener('click',()=>{isOpen?cM():oM()});
-  </script>
+<!-- FOOTER (injected by components.js) -->
+<div data-footer></div>
+
+
+<!-- MOBILE NAV (injected by components.js) -->
+<div data-mobile-nav></div>
+
+<script src="assets/js/components.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
