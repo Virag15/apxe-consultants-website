@@ -98,7 +98,7 @@
           '</p>' +
           '<div class="foot-meta">' +
             '<div class="foot-socials">' +
-              '<a href="#" aria-label="LinkedIn"><svg viewBox="0 0 14 14" width="14" height="14"><rect x="1" y="5" width="2.5" height="8" fill="currentColor"/><circle cx="2.25" cy="2.5" r="1.25" fill="currentColor"/><path d="M5 5 L7.5 5 L7.5 6.2 Q 8.3 4.7 10.2 4.8 Q 13 4.9 13 8.2 L13 13 L10.5 13 L10.5 8.8 Q 10.5 7.3 9.3 7.3 Q 7.5 7.3 7.5 9 L7.5 13 L5 13 Z" fill="currentColor"/></svg></a>' +
+              '<a href="https://www.linkedin.com/company/apxe/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 14 14" width="14" height="14"><rect x="1" y="5" width="2.5" height="8" fill="currentColor"/><circle cx="2.25" cy="2.5" r="1.25" fill="currentColor"/><path d="M5 5 L7.5 5 L7.5 6.2 Q 8.3 4.7 10.2 4.8 Q 13 4.9 13 8.2 L13 13 L10.5 13 L10.5 8.8 Q 10.5 7.3 9.3 7.3 Q 7.5 7.3 7.5 9 L7.5 13 L5 13 Z" fill="currentColor"/></svg></a>' +
               '<a href="#" aria-label="X / Twitter"><svg viewBox="0 0 14 14" width="14" height="14"><path d="M2 2 L12 12 M12 2 L2 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>' +
               '<a href="mailto:sales@apxe.in" aria-label="Email"><svg viewBox="0 0 14 14" width="14" height="14"><rect x="1.5" y="3" width="11" height="8" rx="1" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 4 L7 8 L12.5 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a>' +
             '</div>' +
