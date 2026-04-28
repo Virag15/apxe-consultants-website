@@ -51,7 +51,7 @@
             '<a href="' + path('contact') + '" class="' + isActive('contact') + '">Contact</a>' +
           '</nav>' +
           '<div class="nav-actions">' +
-            '<a href="https://calendly.com/apxe-consultants" target="_blank" rel="noopener" class="btn btn-primary">Book a discovery call</a>' +
+            '<a href="https://calendly.com/apxe-sales/30min" target="_blank" rel="noopener" class="btn btn-primary">Book a discovery call</a>' +
             '<button class="nav-mobile" type="button" aria-label="Open menu" data-mobile-nav-open>' +
               '<span class="bars" aria-hidden="true"></span>Menu' +
             '</button>' +
@@ -128,7 +128,7 @@
         '<a href="' + path('contact') + '"><span class="n">05</span><span>Contact</span><span class="arrow">→</span></a>' +
       '</div>' +
       '<div class="mobile-nav-foot">' +
-        '<a href="https://calendly.com/apxe-consultants" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%">Book a discovery call</a>' +
+        '<a href="https://calendly.com/apxe-sales/30min" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%">Book a discovery call</a>' +
       '</div>' +
     '</div>';
 
