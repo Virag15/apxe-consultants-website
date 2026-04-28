@@ -4092,7 +4092,7 @@ footer {
    SERVICE DETAIL PAGE COMPONENTS
 ============================================================= */
 .breadcrumb {
-  padding: clamp(16px, 2vw, 24px) 0 0;
+  padding: clamp(16px, 2vw, 24px) 0 clamp(24px, 3vw, 40px);
   background: var(--bg);
   font-size: 13px;
   color: var(--ink-muted);
