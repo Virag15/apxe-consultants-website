@@ -34,7 +34,19 @@
           '<nav class="nav-links" aria-label="Primary">' +
             '<a href="' + path('') + '" class="' + isActive('home') + '">Home</a>' +
             '<a href="' + path('about') + '" class="' + isActive('about') + '">About</a>' +
-            '<a href="' + path('services') + '" class="' + isActive('services') + '">Services</a>' +
+            '<div class="nav-dropdown">' +
+              '<a href="' + path('services') + '" class="' + isActive('services') + '">Services</a>' +
+              '<div class="nav-dropdown-menu">' +
+                '<a href="' + path('services/lead-generation') + '">Lead Generation</a>' +
+                '<a href="' + path('services/sales') + '">Sales &amp; BD</a>' +
+                '<a href="' + path('services/growth-strategy') + '">Growth Strategy</a>' +
+                '<a href="' + path('services/financial-advisory') + '">Financial Advisory</a>' +
+                '<a href="' + path('services/operations') + '">Operations</a>' +
+                '<a href="' + path('services/marketing') + '">Marketing</a>' +
+                '<a href="' + path('services/compliance') + '">Compliance &amp; Risk</a>' +
+                '<a href="' + path('services/succession') + '">Succession</a>' +
+              '</div>' +
+            '</div>' +
             '<a href="' + path('work') + '" class="' + isActive('work') + '">Work</a>' +
             '<a href="' + path('contact') + '" class="' + isActive('contact') + '">Contact</a>' +
           '</nav>' +
@@ -70,21 +82,12 @@
             '<li><a href="' + path('services/compliance') + '">Compliance &amp; Risk</a></li>' +
             '<li><a href="' + path('services/succession') + '">Succession</a></li>' +
           '</ul></div>' +
-          '<div class="foot-col"><h5>Industries</h5><ul>' +
-            '<li><a href="' + path('services') + '">Financial Services</a></li>' +
-            '<li><a href="' + path('services') + '">Manufacturing</a></li>' +
-            '<li><a href="' + path('services') + '">Real Estate</a></li>' +
-            '<li><a href="' + path('services') + '">Technology</a></li>' +
-            '<li><a href="' + path('services') + '">Healthcare</a></li>' +
-            '<li><a href="' + path('services') + '">Retail</a></li>' +
-            '<li><a href="' + path('services') + '">Education</a></li>' +
-            '<li><a href="' + path('services') + '">Logistics</a></li>' +
-          '</ul></div>' +
           '<div class="foot-col"><h5>Company</h5><ul>' +
             '<li><a href="' + path('about') + '">About</a></li>' +
             '<li><a href="' + path('') + '#approach">How we work</a></li>' +
             '<li><a href="' + path('services') + '">Services</a></li>' +
             '<li><a href="' + path('work') + '">Work</a></li>' +
+            '<li><a href="' + path('careers') + '">Careers</a></li>' +
             '<li><a href="' + path('contact') + '">Contact</a></li>' +
           '</ul></div>' +
           '<div class="foot-col"><h5>Legal</h5><ul>' +

@@ -90,3 +90,32 @@
     if (e.key === 'Escape' && nav.classList.contains('is-open')) close();
   });
 })();
+
+// Services dropdown toggle on mobile (narrow screens)
+(function () {
+  var dropdown = document.querySelector('.nav-dropdown');
+  var dropdownToggle = document.querySelector('.nav-dropdown > a');
+  if (!dropdown || !dropdownToggle) return;
+
+  var isOpen = false;
+  var toggle = function (e) {
+    if (window.innerWidth > 640) return; // Only on mobile
+    e.preventDefault();
+    isOpen = !isOpen;
+    dropdown.classList.toggle('is-open', isOpen);
+  };
+
+  var close = function () {
+    isOpen = false;
+    dropdown.classList.remove('is-open');
+  };
+
+  dropdownToggle.addEventListener('click', toggle);
+  dropdown.querySelectorAll('.nav-dropdown-menu a').forEach(function (a) {
+    a.addEventListener('click', close);
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!dropdown.contains(e.target)) close();
+  });
+})();
